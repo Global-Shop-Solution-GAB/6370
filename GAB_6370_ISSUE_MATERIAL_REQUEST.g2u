@@ -1,0 +1,2476 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_IssueRequest..Create(BaseForm)
+Gui.F_IssueRequest..Caption("Issue Material from Request")
+Gui.F_IssueRequest..Size(19140,9825)
+Gui.F_IssueRequest..MinX(0)
+Gui.F_IssueRequest..MinY(0)
+Gui.F_IssueRequest..Position(0,0)
+Gui.F_IssueRequest..BackColor(-2147483633)
+Gui.F_IssueRequest..MousePointer(0)
+Gui.F_IssueRequest..Event(UnLoad,Unload)
+Gui.F_IssueRequest..Sizeable(True)
+Gui.F_IssueRequest..AlwaysOnTop(False)
+Gui.F_IssueRequest..FontName("Tahoma")
+Gui.F_IssueRequest..FontSize(8.25)
+Gui.F_IssueRequest..ControlBox(True)
+Gui.F_IssueRequest..MaxButton(True)
+Gui.F_IssueRequest..MinButton(True)
+Gui.F_IssueRequest..Moveable(True)
+Gui.F_IssueRequest..ShowInTaskBar(True)
+Gui.F_IssueRequest..TitleBar(True)
+Gui.F_IssueRequest.lbl1.Create(Label,"Issuance Area",True,1935,255,0,75,150,True,0,"Arial",9,0,0,0)
+Gui.F_IssueRequest.lbl1.BorderStyle(0)
+Gui.F_IssueRequest.ddlArea.Create(DropDownList)
+Gui.F_IssueRequest.ddlArea.Size(3270,345)
+Gui.F_IssueRequest.ddlArea.Position(75,375)
+Gui.F_IssueRequest.ddlArea.FontSize(9)
+Gui.F_IssueRequest.ddlArea.Enabled(True)
+Gui.F_IssueRequest.ddlArea.Visible(True)
+Gui.F_IssueRequest.ddlArea.Zorder(0)
+Gui.F_IssueRequest.ddlArea.FontName("Tahoma")
+Gui.F_IssueRequest.cmdRefresh.Create(Button)
+Gui.F_IssueRequest.cmdRefresh.Size(1125,585)
+Gui.F_IssueRequest.cmdRefresh.Position(3510,150)
+Gui.F_IssueRequest.cmdRefresh.Caption("REFRESH")
+Gui.F_IssueRequest.cmdRefresh.FontSize(9)
+Gui.F_IssueRequest.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.F_IssueRequest.cmdRefresh.Enabled(True)
+Gui.F_IssueRequest.cmdRefresh.Visible(True)
+Gui.F_IssueRequest.cmdRefresh.Zorder(0)
+Gui.F_IssueRequest.cmdRefresh.FontName("Tahoma")
+Gui.F_IssueRequest.cmdExport.Create(Button)
+Gui.F_IssueRequest.cmdExport.Size(1500,585)
+Gui.F_IssueRequest.cmdExport.Position(4770,150)
+Gui.F_IssueRequest.cmdExport.Caption("Export Grid")
+Gui.F_IssueRequest.cmdExport.FontSize(9)
+Gui.F_IssueRequest.cmdExport.Event(Click,ExportGrid)
+Gui.F_IssueRequest.cmdExport.Enabled(True)
+Gui.F_IssueRequest.cmdExport.Visible(True)
+Gui.F_IssueRequest.cmdExport.Zorder(0)
+Gui.F_IssueRequest.cmdExport.FontName("Tahoma")
+Gui.F_IssueRequest.frameLotBin.Create(Frame)
+Gui.F_IssueRequest.frameLotBin.Size(13005,3225)
+Gui.F_IssueRequest.frameLotBin.Position(75,5970)
+Gui.F_IssueRequest.frameLotBin.Caption("Lot/Bin")
+Gui.F_IssueRequest.frameLotBin.FontSize(9)
+Gui.F_IssueRequest.frameLotBin.Enabled(True)
+Gui.F_IssueRequest.frameLotBin.Visible(True)
+Gui.F_IssueRequest.frameLotBin.Zorder(0)
+Gui.F_IssueRequest.frameLotBin.FontName("Tahoma")
+Gui.F_IssueRequest.GsGCLot.Create(GsGridControl)
+Gui.F_IssueRequest.GsGCLot.Size(11400,2805)
+Gui.F_IssueRequest.GsGCLot.Position(90,240)
+Gui.F_IssueRequest.GsGCLot.Parent("frameLotBin")
+Gui.F_IssueRequest.GsGCLot.Event(CellValueChanged,gvLot_CheckBox)
+Gui.F_IssueRequest.GsGCLot.Enabled(True)
+Gui.F_IssueRequest.GsGCLot.Visible(True)
+Gui.F_IssueRequest.GsGCLot.Zorder(0)
+Gui.F_IssueRequest.cmdCancel.Create(Button)
+Gui.F_IssueRequest.cmdCancel.Size(1320,465)
+Gui.F_IssueRequest.cmdCancel.Position(11595,795)
+Gui.F_IssueRequest.cmdCancel.Parent("frameLotBin")
+Gui.F_IssueRequest.cmdCancel.Caption("Cancel")
+Gui.F_IssueRequest.cmdCancel.FontSize(9)
+Gui.F_IssueRequest.cmdCancel.Event(Click,LotBin_Cancel)
+Gui.F_IssueRequest.cmdCancel.Enabled(True)
+Gui.F_IssueRequest.cmdCancel.Visible(True)
+Gui.F_IssueRequest.cmdCancel.Zorder(0)
+Gui.F_IssueRequest.cmdCancel.FontName("Tahoma")
+Gui.F_IssueRequest.cmdIssue.Create(Button)
+Gui.F_IssueRequest.cmdIssue.Size(1320,465)
+Gui.F_IssueRequest.cmdIssue.Position(11595,240)
+Gui.F_IssueRequest.cmdIssue.Parent("frameLotBin")
+Gui.F_IssueRequest.cmdIssue.Caption("Issue")
+Gui.F_IssueRequest.cmdIssue.FontSize(9)
+Gui.F_IssueRequest.cmdIssue.Event(Click,LotBin_Issue0)
+Gui.F_IssueRequest.cmdIssue.Enabled(True)
+Gui.F_IssueRequest.cmdIssue.Visible(True)
+Gui.F_IssueRequest.cmdIssue.Zorder(0)
+Gui.F_IssueRequest.cmdIssue.FontName("Tahoma")
+Gui.F_IssueRequest.cmdPrint.Create(Button)
+Gui.F_IssueRequest.cmdPrint.Size(1500,585)
+Gui.F_IssueRequest.cmdPrint.Position(6405,150)
+Gui.F_IssueRequest.cmdPrint.Caption("Print Audit Trail")
+Gui.F_IssueRequest.cmdPrint.FontSize(9)
+Gui.F_IssueRequest.cmdPrint.Event(Click,PrintAuditTrail)
+Gui.F_IssueRequest.cmdPrint.Enabled(True)
+Gui.F_IssueRequest.cmdPrint.Visible(True)
+Gui.F_IssueRequest.cmdPrint.Zorder(0)
+Gui.F_IssueRequest.cmdPrint.FontName("Tahoma")
+Gui.F_IssueRequest.cmdIssueSelected.Create(Button)
+Gui.F_IssueRequest.cmdIssueSelected.Enabled(True)
+Gui.F_IssueRequest.cmdIssueSelected.Visible(True)
+Gui.F_IssueRequest.cmdIssueSelected.Zorder(0)
+Gui.F_IssueRequest.cmdIssueSelected.Size(1515,555)
+Gui.F_IssueRequest.cmdIssueSelected.Position(11715,165)
+Gui.F_IssueRequest.cmdIssueSelected.Caption("Issue Selected")
+Gui.F_IssueRequest.cmdIssueSelected.FontName("Tahoma")
+Gui.F_IssueRequest.cmdIssueSelected.FontSize(9)
+Gui.F_IssueRequest.cmdIssueSelected.Event(Click,cmdIssueSelected_Click)
+Gui.F_IssueRequest.lbl2.Create(Label,"Total Request",True,2085,360,0,13305,6015,True,0,"Tahoma",15,,0,0)
+Gui.F_IssueRequest.lbl2.BorderStyle(0)
+Gui.F_IssueRequest.lbl2.FontStyle(True,False,False,False,False)
+Gui.F_IssueRequest.txtRequest.Create(TextBox,"0",True,5520,600,0,13305,6510,True,0,"Tahoma",20,,1)
+Gui.F_IssueRequest.txtRequest.NumericOnly(1)
+Gui.F_IssueRequest.txtRequest.Locked(True)
+Gui.F_IssueRequest.txtRequest.DefaultValue("0")
+Gui.F_IssueRequest.lbl3.Create(Label,"Total Lot/Bin Selected",True,3375,360,0,13320,7620,True,0,"Tahoma",15,,0,0)
+Gui.F_IssueRequest.lbl3.BorderStyle(0)
+Gui.F_IssueRequest.lbl3.FontStyle(True,False,False,False,False)
+Gui.F_IssueRequest.txtLotBin.Create(TextBox,"0",True,5490,600,0,13305,8025,True,0,"Tahoma",20,,1)
+Gui.F_IssueRequest.txtLotBin.NumericOnly(1)
+Gui.F_IssueRequest.txtLotBin.Locked(True)
+Gui.F_IssueRequest.txtLotBin.DefaultValue("0")
+Gui.F_IssueRequest.frameRequest.Create(Frame)
+Gui.F_IssueRequest.frameRequest.Enabled(True)
+Gui.F_IssueRequest.frameRequest.Visible(True)
+Gui.F_IssueRequest.frameRequest.Zorder(0)
+Gui.F_IssueRequest.frameRequest.Size(18735,5025)
+Gui.F_IssueRequest.frameRequest.Position(120,795)
+Gui.F_IssueRequest.frameRequest.Caption("")
+Gui.F_IssueRequest.frameRequest.FontName("Tahoma")
+Gui.F_IssueRequest.frameRequest.FontSize(8.25)
+Gui.F_IssueRequest.GsGCRequest.Create(GsGridControl)
+Gui.F_IssueRequest.GsGCRequest.Size(18570,4845)
+Gui.F_IssueRequest.GsGCRequest.Position(75,90)
+Gui.F_IssueRequest.GsGCRequest.Event(RowCellClick,gvReq_Issue)
+Gui.F_IssueRequest.GsGCRequest.Event(CellValueChanged,gvReq_ChangeValue)
+Gui.F_IssueRequest.GsGCRequest.Enabled(True)
+Gui.F_IssueRequest.GsGCRequest.Visible(True)
+Gui.F_IssueRequest.GsGCRequest.Zorder(0)
+Gui.F_IssueRequest.GsGCRequest.Anchor(13)
+Gui.F_IssueRequest.GsGCRequest.Parent("frameRequest")
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.bIssue.Declare
+V.Global.bLock.Declare
+V.Global.iBISeq.Declare(Long,1)
+V.Global.iLot.Declare
+V.Global.iReq.Declare
+V.Global.iIssueSelected.Declare
+V.Global.sPart.Declare
+V.Global.sLoc.Declare
+V.Global.fIssueTotal.Declare
+V.Global.iCnt.Declare
+V.Global.bLoadData.Declare
+Program.External.Include.Library("450100.lib")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.bExist.Declare
+V.Local.i1.Declare
+V.Local.sFilter.Declare
+V.Local.sIcon.Declare
+V.Local.sQuery.Declare
+V.Local.sRet.Declare
+
+'F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)
+Gui.F_IssueRequest..Icon(V.Local.sIcon)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+'F.ODBC.Connection!conC.OpenConnection("GLOBAL_COMMON",V.Ambient.PUser,V.Ambient.PPass)
+
+F.ODBC.Connection!conx.TableExists("GAB_6370_MATREQ_HEAD",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.Intrinsic.UI.Msgbox("Material Request table has not been setup. Please place a material request before opening this menu","Issue Material Request [ARC 6370]")
+	F.ODBC.Connection!conx.Close
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6370_SFDC_AREA",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,True)
+	F.Data.DataTable.CreateFromSQL("dtArea","conx","select ID, area as Area from GAB_6370_SFDC_AREA order by area",True)
+F.Intrinsic.Control.else
+	F.Data.DataTable.Create("dtArea",True)
+	F.Data.DataTable.AddColumn("dtArea","ID","Long")
+	F.Data.DataTable.AddColumn("dtArea","Area","String")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.AddRow("dtArea","ID",0,"Area","***NOT SPECIFIED***")
+F.Data.DataTable.AddRow("dtArea","ID",99999,"Area","All Areas")
+F.Intrinsic.Control.For(V.Local.i1,V.DataTable.dtArea.RowCount--,0,-1)
+	Gui.F_IssueRequest.ddlArea.AddItem(V.DataTable.dtArea(V.Local.i1).Area!FieldValTrim)
+F.Intrinsic.Control.Next(V.Local.i1)
+Gui.F_IssueRequest.ddlArea.Text("All Areas")
+F.Data.DataTable.CreateFromSQL("dtPartInfo","Conx","select i1.part as Part, i1.location as Loc, i1.description as Description1, i2.description_2 as Description2, i2.description_3 as Description3, i1.um_inventory as UM, i1.qty_onhand as Onhand from v_inventory_mstr i1 left join v_inventory_mst2 i2 on i1.part = i2.part and i1.location = i2.location",True) 
+'F.Data.DataTable.CreateFromSQL("dtUserID","conC","select gs_user as UserID, first_name as FirstName, last_name as LastName from user_information",True)
+F.Data.DataTable.CreateFromSQL("dtEmployee","conx","select employee as ID, name as Name from v_employee_mstr",True)
+F.Intrinsic.Control.CallSub(cmdrefresh_click)
+'F.Intrinsic.Control.CallSub(Deserialize)
+F.Intrinsic.Control.CallSub(SetContextMenus)
+
+'Clear out the BI_SF_AUDIT table and open a connection to the table for audit trail data input
+F.Intrinsic.String.Build("DELETE FROM BI_SF_AUDIT WHERE TRMNL = '{0}'",V.Caller.Terminal,V.Local.sQuery)
+F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+Gui.F_IssueRequest.frameLotBin.Enabled(False)
+
+	'0 - None
+	'1 - Top
+	'2 - Bottom
+	'4 - Left
+	'8 - Right
+	
+Gui.F_IssueRequest.frameRequest.Anchor(15)	
+Gui.F_IssueRequest.GsGCRequest.Anchor(15)
+Gui.F_IssueRequest.frameLotBin.Anchor(14)
+Gui.F_IssueRequest.GsGCLot.Anchor(14)
+Gui.F_IssueRequest.cmdIssue.Anchor(8)
+Gui.F_IssueRequest.cmdCancel.Anchor(8)
+Gui.F_IssueRequest.lbl2.Anchor(10)
+Gui.F_IssueRequest.lbl3.Anchor(10)
+Gui.F_IssueRequest.txtLotBin.Anchor(10)
+Gui.F_IssueRequest.txtRequest.Anchor(10)
+
+Gui.F_IssueRequest..Show
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.If(V.DataTable.dtRequest.Exists,=,True)
+	F.Intrinsic.Control.If(V.DataView.dtRequest!dvRequest.Exists,=,True)
+		F.Data.DataView.Close("dtRequest","dvRequest")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("dtRequest")
+F.Intrinsic.Control.EndIf
+'F.Data.DataTable.Close("dtUserID")
+F.Data.DataTable.Close("dtEmployee")
+F.Data.DataTable.Close("dtPartInfo")
+F.Data.DataTable.Close("dtArea")
+F.Intrinsic.Control.CallSub(Serialize)
+'F.ODBC.Connection!conC.Close
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.SetContextMenus.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.F_IssueRequest..ContextMenuCreate("ctxIssue")
+	Gui.F_IssueRequest.GsGCRequest.ContextMenuAttach("ctxIssue")
+	Gui.F_IssueRequest..ContextMenuAddItem("ctxIssue","Export",0,"Export")
+	Gui.F_IssueRequest..ContextMenuAddItem("ctxIssue","ResetColumns",0,"Reset Columns")
+	Gui.F_IssueRequest..ContextMenuSetItemEventHandler("ctxIssue","Export","MenuClickExport")
+	Gui.F_IssueRequest..ContextMenuSetItemEventHandler("ctxIssue","ResetColumns","MenuClickResetColumns")
+		
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenus.End
+
+Program.Sub.MenuClickExport.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare
+	V.Local.sControl.Declare
+	V.Local.bChart.Declare
+	
+	F.Intrinsic.Control.SelectCase(V.Args.MenuName)
+		F.Intrinsic.Control.Case("CTXISSUE")
+			V.Local.sControl.Set("GSGCRequest")
+			V.Local.bChart.Set(False)
+	F.Intrinsic.Control.EndSelect
+
+	F.Intrinsic.Control.If(V.Local.bChart,=,False)
+		F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+		F.Intrinsic.Control.If(V.Local.bExcel)
+			F.Intrinsic.String.Build("{0}\GAB_6370_{1}_Export.xlsx",V.Caller.LocalGssTempDir,V.Local.sControl,V.Local.sFileExport)
+			F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+			F.Intrinsic.Control.If(V.Local.bFileLocked)
+				F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+				F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+			F.Intrinsic.Control.Else
+				Gui.F_IssueRequest.[V.Local.sControl].Export(V.Local.sFileExport,"xlsx")
+				F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}\GAB_6370_{1}_Export.csv",V.Caller.LocalGssTempDir,V.Local.sControl,V.Local.sFileExport)
+			F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+			F.Intrinsic.Control.If(V.Local.bFileLocked)
+				F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+				F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+			F.Intrinsic.Control.Else
+				Gui.F_IssueRequest.[V.Local.sControl].Export(V.Local.sFileExport,"csv")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}\{1}.jpg",V.Caller.LocalGSSTempDir,V.Local.sControl,V.Local.sFileExport)
+		Gui.F_IssueRequest.[V.Local.sControl].ImageToFile("JPEG",V.Local.sFileExport)
+		F.Intrinsic.Task.ShellExec(0,"Open",V.Local.sFileExport,"","",0)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickExport.End
+
+Program.Sub.MenuClickResetColumns.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.SelectCase(V.Args.MenuName)
+		F.Intrinsic.Control.Case("CTXISSUE")
+			F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVReq",6370,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,"")
+	F.Intrinsic.Control.EndSelect
+	
+	V.Global.bLoadData.Set(False)
+	'Loading WorkOrder dictionary
+'	F.Intrinsic.Control.CallSub(GetWorkOrderDictionary)
+
+	'Loading Part dictionary
+'	F.Intrinsic.Control.CallSub(GetPartDictionary)
+
+	'Loading Work Order Records
+	F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickResetColumns.End
+
+Program.Sub.cmdRefresh_Click.Start
+V.Local.fIssue.Declare
+V.Local.fOnhand.Declare
+V.Local.fRequest.Declare
+V.Local.i1.Declare(Long)
+V.Local.i2.Declare
+V.Local.iIndex.Declare
+V.Local.sArea.Declare
+V.Local.sDescription.Declare
+V.Local.sFilter.Declare
+V.Local.sName.Declare
+V.Local.sQuery.Declare
+V.Local.sRet.Declare
+V.Local.sUM.Declare
+V.Local.sMsg.Declare
+
+Gui.F_IssueRequest.GsGCRequest.visible(False)
+F.Intrinsic.UI.InvokeWaitDialog("Load open requests","Issue Material Request [ARC 6370]")
+V.Local.sArea.Set(V.Screen.F_IssueRequest!ddlArea.Text)
+F.Intrinsic.Control.If(V.DataTable.dtRequest.Exists,=,True)
+	F.Intrinsic.Control.If(V.DataView.dtRequest!dvRequest.Exists,=,True)
+		F.Data.DataView.Close("dtRequest","dvRequest")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("dtRequest")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.CreateFromSQL("dtRequest","conx","select i1.req_id as ReqID, i1.req_seq as Line, concat(i1.req_id, i1.req_seq) as ReqKey, i2.date_request as DateReq, i2.location as Location, '***NOT SPECIFIED***' as Area, i2.user_request as UserID, i2.employee as Employee, ' ' as Name, '' as Router, concat(rtrim(i1.part),rtrim(i1.loc)) as PartLoc, '' as ParentPart, Ltrim(RTRIM(I1.part)) as Part, '' as LPart, '' as LRev, i1.loc as Loc, '' as BIN, '' as Code_Sort, ' ' as Description, i1.job as Job, i1.Suffix as Suffix, i1.Seq as Sequence, '' as WO_Code_Sort, ' ' as UM, i1.qty_req as QtyReq, i1.qty_issued as QtyIssued, i1.job+i1.Suffix as JS, i1.job+i1.Suffix+i1.seq as JSS from GAB_6370_MATREQ_LINE i1 left join GAB_6370_MATREQ_HEAD i2 on i1.req_id = i2.id where i1.qty_req > i1.qty_issued and i1.status = 0 order by i1.req_id, i1.req_seq",True)
+F.Data.DataTable.AddColumn("dtRequest","Request","Float")
+F.Data.DataTable.AddColumn("dtRequest","Onhand","Float")
+F.Data.DataTable.AddColumn("dtRequest","Issue","Float")
+F.Data.DataTable.AddColumn("dtRequest","Submit","String")
+F.Data.DataTable.AddColumn("dtRequest","Flag","Boolean")
+F.Data.DataTable.SetValue("dtRequest",-1,"Flag",False)
+
+F.Data.Dictionary.CreateFromSQL("dicParent",conx,"SELECT A.JOB+A.SUFFIX AS JS, B.PART AS PARENTPART FROM V_JOB_HEADER A LEFT JOIN V_JOB_HEADER B ON A.PARENT_WO = B.JOB AND A.PARENT_SUFFIX_PARENT = B.SUFFIX;")
+F.Data.Dictionary.SetDefaultReturn("dicParent","")
+F.Data.DataTable.FillFromDictionary("dtRequest","dicParent","JS","ParentPart")
+F.Data.Dictionary.Close("dicParent")
+
+F.Data.Dictionary.CreateFromSQL("dicRouter",conx,"SELECT JOB+SUFFIX AS JS, Router FROM V_JOB_HEADER;")
+F.Data.Dictionary.SetDefaultReturn("dicRouter","")
+F.Data.DataTable.FillFromDictionary("dtRequest","dicRouter","JS","Router")
+F.Data.Dictionary.Close("dicRouter")
+
+F.Data.Dictionary.CreateFromSQL("dicPart",conx,"SELECT concat(rtrim(part),rtrim(location)) as PartLoc, BIN FROM V_Inventory_Mstr;")
+F.Data.Dictionary.SetDefaultReturn("dicPart","")
+F.Data.DataTable.FillFromDictionary("dtRequest","dicPart","PartLoc","BIN")
+F.Data.Dictionary.Close("dicPart")
+
+F.Data.Dictionary.CreateFromSQL("dicCodeSort",conx,"SELECT concat(rtrim(part),rtrim(location)) as PartLoc, Code_Sort FROM V_Inventory_Mstr;")
+F.Data.Dictionary.SetDefaultReturn("dicCodeSort","")
+F.Data.DataTable.FillFromDictionary("dtRequest","dicCodeSort","PartLoc","Code_Sort")
+F.Data.Dictionary.Close("dicCodeSort")
+
+F.Data.Dictionary.CreateFromSQL("dicCodeSort",conx,"SELECT JOB+SUFFIX+SEQ AS JSS, CODE_SORT_OPER FROM V_JOB_OPERATIONS;")
+F.Data.Dictionary.SetDefaultReturn("dicCodeSort","")
+F.Data.DataTable.FillFromDictionary("dtRequest","dicCodeSort","JSS","WO_Code_Sort")
+F.Data.Dictionary.Close("dicCodeSort")
+
+F.Data.Dictionary.CreateFromSQL("dicLPart",conx,"select Ltrim(RTRIM(IM.part)), If(Display_Part <> '', Display_Part, Left(IM.Part,17)) as PartNo from Inventory_Mstr IM Left Join Inv_Lxr IL On IM.Part = IL.GSS_Part;")
+F.Data.Dictionary.SetDefaultReturn("dicLPart","")
+F.Data.DataTable.FillFromDictionary("dtRequest","dicLPart","Part","LPart")
+F.Data.Dictionary.Close("dicLPart")
+
+F.Data.Dictionary.CreateFromSQL("dic",conx,"select Ltrim(RTRIM(IM.part)), If(Display_Part <> '', Display_Rev, If(LENGTH(Im.Part)=18, right(IM.Part,3), If(LENGTH(Im.Part)=19, right(IM.Part,3), If(LENGTH(Im.Part)=20, right(IM.Part,3),'')))) as RevNo from Inventory_Mstr IM Left Join Inv_Lxr IL On IM.Part = IL.GSS_Part;")
+F.Data.Dictionary.SetDefaultReturn("dic","")
+F.Data.DataTable.FillFromDictionary("dtRequest","dic","Part","LRev")
+F.Data.Dictionary.Close("dic")
+
+F.Data.Dictionary.CreateFromSQL("dicPart",conx,"SELECT concat(rtrim(part),rtrim(location)) as PartLoc, Qty_Onhand FROM V_Inventory_Mstr;")
+F.Data.Dictionary.SetDefaultReturn("dicPart",0)
+F.Data.DataTable.FillFromDictionary("dtRequest","dicPart","PartLoc","Onhand")
+F.Data.Dictionary.Close("dicPart")
+		
+'Complete some info: Area, Name, Description, UM, Request, Onhand, Issue
+F.Intrinsic.Control.For(V.Local.iIndex,0,V.DataTable.dtRequest.RowCount--,1)
+	F.Intrinsic.Math.Add(V.Local.iIndex,1,V.Local.i2)
+	F.Intrinsic.UI.ChangeWaitStatus("Preparing request grid",V.Local.i2,1,V.DataTable.dtRequest.RowCount)
+	'Location ID
+	F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtRequest(V.Local.iIndex).Location!FieldValLong,V.Local.sFilter)
+	F.Data.DataTable.Select("dtArea",V.Local.sFilter,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,=,"***NORETURN***")
+		V.Local.sArea.Set("***NOT FOUND***")
+	F.Intrinsic.Control.Else
+		V.Local.sArea.Set(V.DataTable.dtArea(V.Local.sRet).Area!FieldValTrim)
+	F.Intrinsic.Control.EndIf
+	'Name of user/ employee
+	F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Local.iIndex).UserID!FieldValTrim,=,"**SFDC**")
+		F.Intrinsic.String.Build("ID = '{0}'",V.DataTable.dtRequest(V.Local.iIndex).Employee!FieldValTrim,V.Local.sFilter)
+		F.Data.DataTable.Select("dtEmployee",V.Local.sFilter,V.Local.sRet)
+		V.Local.sName.Set(V.DataTable.dtEmployee(V.Local.sRet).Name!FieldValTrim)
+	F.Intrinsic.Control.Else
+		F.Global.Security.GetFullName(V.DataTable.dtRequest(V.Local.iIndex).UserID!FieldValTrim,V.Caller.CompanyCode,V.Local.sName)
+'		F.Intrinsic.String.Build("UserID = '{0}'",V.DataTable.dtRequest(V.Local.iIndex).UserID!FieldValTrim,V.Local.sFilter)
+'		F.Data.DataTable.Select("dtUserID",V.Local.sFilter,V.Local.sRet)
+'		F.Intrinsic.String.Build("{0} {1}",V.DataTable.dtUserID(V.Local.sRet).FirstName!FieldValTrim,V.DataTable.dtUserID(V.Local.sRet).LastName!FieldValTrim,V.Local.sName)
+	F.Intrinsic.Control.EndIf
+	'Part related info
+	F.Intrinsic.String.Build("Part = '{0}' and Loc = '{1}'",V.DataTable.dtRequest(V.Local.iIndex).Part!FieldVal,V.DataTable.dtRequest(V.Local.iIndex).Loc!FieldVal,V.Local.sFilter)
+	F.Data.DataTable.Select("dtPartInfo",V.Local.sFilter,V.Local.sRet)
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+		V.Local.fOnhand.Set(V.DataTable.dtRequest(V.Local.iIndex).Onhand!FieldValFloat)
+		V.Local.sUM.Set(V.DataTable.dtPartInfo(V.Local.sRet(0)).UM!FieldValTrim)
+		F.Intrinsic.String.Build("{0} {1} {2}",V.DataTable.dtPartInfo(V.Local.sRet(0)).Description1!FieldValTrim,V.DataTable.dtPartInfo(V.Local.sRet(0)).Description2!FieldValTrim,V.DataTable.dtPartInfo(V.Local.sRet(0)).Description3!FieldValTrim,V.Local.sDescription)
+		F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Local.iIndex).QtyReq!FieldValFloat,V.DataTable.dtRequest(V.Local.iIndex).QtyIssued!FieldValFloat,V.Local.fRequest)
+		F.Intrinsic.Control.If(V.Local.fRequest,>,V.Local.fOnhand)
+			V.Local.fIssue.Set(V.Local.fOnhand)
+		F.Intrinsic.Control.Else
+			V.Local.fIssue.Set(V.Local.fRequest)
+		F.Intrinsic.Control.EndIf
+		
+		F.Data.DataTable.SetValue("dtRequest",V.Local.iIndex,"Area",V.Local.sArea.Trim,"Name",V.Local.sName.Trim,"Description",V.Local.sDescription.Trim,"UM",V.Local.sUM.Trim,"Request",V.Local.fRequest,"Issue",V.Local.fIssue)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Part # {0} and Loc # {1} is not found in inventory master. Please create it first on Inventory > File > Inventory Parts > New.",V.DataTable.dtRequest(V.Local.iIndex).Part!FieldVal,V.DataTable.dtRequest(V.Local.iIndex).Loc!FieldVal,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"GAB 6370 Issue Material")
+		F.ODBC.Connection!conx.Close
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iIndex)
+V.Local.sArea.Set(V.Screen.F_IssueRequest!ddlArea.Text)
+F.Intrinsic.Control.If(V.Local.sArea.Trim,=,"All Areas")
+	V.Local.sFilter.Set("")
+F.Intrinsic.Control.ElseIf(V.Local.sArea.Trim,=,"***NOT SPECIFIED***")
+	V.Local.sFilter.Set("Location = 0")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("Area = '{0}'",V.Local.sArea.Trim,V.Local.sFilter)
+	F.Data.DataTable.Select("dtArea",V.Local.sFilter,V.Local.sRet)
+	F.Intrinsic.String.Build("Location = {0}",V.DataTable.dtArea(V.Local.sRet).ID!FieldValLong,V.Local.sFilter)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataView.Create("dtRequest","dvRequest",22,V.Local.sFilter,"ReqID ASC, Line ASC")
+Gui.F_IssueRequest.GsGCRequest.AddGridviewFromDataview("gvReq","dtRequest","dvRequest")
+Gui.F_IssueRequest.GsGCRequest.MainView("gvReq")
+Gui.F_IssueRequest.GsGCRequest.SetGridviewProperty("gvReq","showgrouppanel",True)
+Gui.F_IssueRequest.GsGCRequest.ColumnEdit("gvReq","Submit","EditorButton","Issue")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","ReqKey","Visible",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","PartLoc","Visible",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Location","Visible",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","UserID","Visible",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Employee","Visible",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","QtyReq","Visible",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","QtyIssued","Visible",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","JS","Visible",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","JSS","Visible",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Part","Visible",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","ReqID","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Line","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Job","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Suffix","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Sequence","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","UM","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","DateReq","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Loc","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Submit","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","ReqID","Caption","Request")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","DateReq","Caption","Request Date")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","ParentPart","Caption","Parent Part")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Request","Caption","Request Qty")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Onhand","Caption","Onhand Qty")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Code_Sort","Caption","Inv. Sort Code")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","WO_Code_Sort","Caption","WO Sort Code")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","LPart","Caption","Long Part")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","LRev","Caption","Long Rev")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Submit","ShowCaption",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Flag","ShowCaption",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","CellBackColor","LtBlue")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","ReqID","Fixed","Left")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Line","Fixed","Left")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Submit","Fixed","Right")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Flag","Fixed","Right")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","DateReq","DisplayCustomDatetime","d")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Request","DisplayCustomNumeric","##,###,##0.0000")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Onhand","DisplayCustomNumeric","##,###,##0.0000")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","DisplayCustomNumeric","##,###,##0.0000")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","ReqID","MinWidth","60")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Line","MinWidth","40")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","DateReq","MinWidth","100")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Area","MinWidth","140")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Name","MinWidth","140")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","ParentPart","MinWidth","140")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Part","MinWidth","140")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Router","MinWidth","140")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","BIN","MinWidth","50")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Code_Sort","MinWidth","100")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","WO_Code_Sort","MinWidth","100")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","LPart","MinWidth","200")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","LRev","MinWidth","100")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Loc","MinWidth","40")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Description","MinWidth","300")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Job","MinWidth","60")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Suffix","MinWidth","50")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Sequence","MinWidth","60")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","UM","MinWidth","40")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Request","MinWidth","100")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Onhand","MinWidth","100")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","MinWidth","100")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Submit","MinWidth","60")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Flag","Width","20")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","ReadOnly",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","AllowEdit",True)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Submit","AllowEdit",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Flag","ReadOnly",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Flag","AllowEdit",True)
+F.Intrinsic.UI.CloseWaitDialog
+F.Intrinsic.Control.CallSub(Deserialize)
+Gui.F_IssueRequest.GsGCRequest.visible(True)
+Gui.F_IssueRequest.frameRequest.Locked(False)
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.gvReq_ChangeValue.Start
+V.Local.fValue.Declare
+V.Local.sFilter.Declare
+V.Local.fTotal.Declare
+V.Local.fIssue.Declare
+
+F.Intrinsic.Control.If(V.Args.Column,=,"Issue")
+	V.Local.fValue.set(V.Args.Value)
+	F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",0)
+	F.Intrinsic.String.Build("Flag = True and Part = '{0}' and Loc = '{1}'",V.DataTable.dtRequest(V.Args.RowIndex).Part!FieldValFloat, V.DataTable.dtRequest(V.Args.RowIndex).Loc!FieldValTrim, V.Local.sFilter)
+	F.Data.DataView.Create("dtRequest","dvIssueSelected")
+	F.Data.DataView.SetFilter("dtRequest","dvIssueSelected",V.Local.sFilter)
+	F.Data.DataView.ToDataTable("dtRequest","dvIssueSelected","dtTemp",True)
+	F.Data.DataView.Close("dtRequest","dvIssueSelected")
+	F.Data.DataTable.Compute("dtTemp","SUM(Issue)","",V.Local.fTotal)
+	F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Args.RowIndex).Onhand!FieldValFloat,V.Local.fTotal,V.Local.fIssue)
+	F.Intrinsic.Control.If(V.Local.fValue,>,V.Local.fIssue)
+		F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",V.Local.fIssue)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Args.RowIndex).Request!FieldValFloat,>,V.Local.fValue)
+			F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",V.Local.fValue)
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",V.DataTable.dtRequest(V.Args.RowIndex).Request!FieldValFloat)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("dtTemp")	
+	
+F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Flag")
+	F.Intrinsic.Control.If(V.Args.Value,=,True)
+		V.Local.fValue.Set(V.DataTable.dtRequest(V.Args.RowIndex).Issue!FieldValFloat)
+		F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",0)
+		F.Intrinsic.String.Build("Flag = True and Part = '{0}' and Loc = '{1}'",V.DataTable.dtRequest(V.Args.RowIndex).Part!FieldValTrim, V.DataTable.dtRequest(V.Args.RowIndex).Loc!FieldValTrim, V.Local.sFilter)
+		F.Data.DataView.Create("dtRequest","dvIssueSelected")
+		F.Data.DataView.SetFilter("dtRequest","dvIssueSelected",V.Local.sFilter)
+		F.Data.DataView.ToDataTable("dtRequest","dvIssueSelected","dtTemp",True)
+		F.Data.DataView.Close("dtRequest","dvIssueSelected")
+		F.Data.DataTable.Compute("dtTemp","SUM(Issue)","",V.Local.fTotal)
+		F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Args.RowIndex).Onhand!FieldValFloat,V.Local.fTotal,V.Local.fIssue)
+		F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Args.RowIndex).Request!FieldValFloat,>,V.Local.fIssue)
+			F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",V.Local.fIssue)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Args.RowIndex).Request!FieldValFloat,>,V.Local.fValue)
+				F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",V.Local.fValue)
+			F.Intrinsic.Control.Else
+				F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",V.DataTable.dtRequest(V.Args.RowIndex).Request!FieldValFloat)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.Close("dtTemp")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.gvReq_ChangeValue.End
+
+Program.Sub.gvReq_Issue.Start
+V.Local.sQuery.Declare
+V.Local.sMessage.Declare 
+V.Local.sTemp.Declare
+
+F.Intrinsic.Control.If(V.Args.Column,=,"Submit")
+F.Intrinsic.Control.AndIf(V.DataTable.dtRequest(V.Args.RowIndex).Onhand!FieldValFloat,>,0)
+V.Global.iIssueSelected.Set(0)
+	'Check issue qty
+	F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Args.RowIndex).Issue!FieldValFloat,>,V.DataTable.dtRequest(V.Args.RowIndex).Request!FieldValFloat)
+		F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Args.RowIndex).Request!FieldValFloat,>,V.DataTable.dtRequest(V.Args.RowIndex).Onhand!FieldValFloat)
+			'TDJOHAN	F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",V.DataTable.dtRequest(V.Args.RowIndex).Onhand!FieldValFloat)			
+			F.Intrinsic.UI.Msgbox("Cannot issue more than OnHand Qty. Please revise the Issue Qty.")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Args.RowIndex).Issue!FieldValFloat,<=,0)
+				F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",0)
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.Else
+				'TDJOHAN	F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",V.DataTable.dtRequest(V.Args.RowIndex).Request!FieldValFloat)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Args.RowIndex).Issue!FieldValFloat,>,V.DataTable.dtRequest(V.Args.RowIndex).Onhand!FieldValFloat)
+			'TDJOHAN	F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",V.DataTable.dtRequest(V.Args.RowIndex).Onhand!FieldValFloat)
+			F.Intrinsic.UI.Msgbox("Cannot issue more than OnHand Qty. Please revise the Issue Qty.")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Args.RowIndex).Issue!FieldValFloat,<=,0)
+				'If qty <= 0, cancel issue
+				F.Data.DataTable.SetValue("dtRequest",V.Args.RowIndex,"Issue",0)
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Format(V.DataTable.dtRequest(V.Args.RowIndex).Issue!FieldValFloat,"#,0.0000",V.Local.sTemp)
+	Gui.F_IssueRequest.txtRequest.Text(V.Local.sTemp)
+	F.Intrinsic.String.Format(0,"#,0.0000",V.Local.sTemp)
+	Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+	
+	Gui.F_IssueRequest.GsGCRequest.SetRowAppearance("gvReq",V.Args.RowIndex,"backcolor","Lime")
+	Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","ReadOnly",True)
+	Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","AllowEdit",False)
+	Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Submit","AllowEdit",True)
+	'Check for lot/bin
+	F.Intrinsic.String.Build("SELECT FLAG_LOT FROM V_INVENTORY_MSTR WHERE PART = '{0}' and location = '{1}'",V.DataTable.dtRequest(V.Args.RowIndex).Part!FieldValTrim,V.DataTable.dtRequest(V.Args.RowIndex).Loc!FieldValTrim,V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+	V.Global.iReq.Set(V.Args.RowIndex)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValTrim!FLAG_LOT,=,"Y")
+		V.Global.bIssue.Set(True)
+		Gui.F_IssueRequest.frameLotBin.Enabled(True)
+		F.Intrinsic.Control.If(V.DataTable.dtLot.Exists,=,True)
+			F.Data.DataTable.Close("dtLot")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Build("SELECT Part, LOT as Lot,BIN as Bin,HEAT as Heat,SERIAL_NUMBER as Serial, date_expiration as ExpDate, QUANTITY as Quantity FROM V_ITEM_MASTER WHERE PART = '{0}' and location = '{1}' AND QUANTITY > 0 ORDER BY DATE_LAST_REC",V.DataTable.dtRequest(V.Args.RowIndex).Part!FieldValTrim,V.DataTable.dtRequest(V.Args.RowIndex).Loc!FieldValTrim,V.Local.sQuery)
+		F.Data.DataTable.CreateFromSQL("dtLot","conx",V.Local.sQuery,True)
+		F.Data.DataTable.AddColumn("dtLot","Issue","Float")
+		F.Data.DataTable.AddColumn("dtLot","Flag","Boolean")
+		F.Data.DataTable.SetValue("dtLot",-1,"Flag",False,"Issue",0)
+		Gui.F_IssueRequest.GsGCLot.AddGridviewFromDatatable("gvLot","dtLot")
+		F.Intrinsic.Control.CallSub(gvlot_properties)
+		Gui.F_IssueRequest.GsGCLot.MainView("gvLot")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.CallSub(issuematerial,"fIssue",V.DataTable.dtRequest(V.Args.RowIndex).Issue!FieldValFloat)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.CallSub(Serialize)	
+F.Intrinsic.Control.EndIf
+Program.Sub.gvReq_Issue.End
+
+Program.Sub.IssueMaterial.Start
+V.Local.dIssued.Declare(Date)
+V.Local.fQtyIssued.Declare
+V.Local.fQtyRem.Declare
+V.Local.i1.Declare
+V.Local.iLen.Declare
+V.Local.sBin.Declare
+V.Local.sDate.Declare
+V.Local.sDescription.Declare
+V.Local.sFile.Declare
+V.Local.sFileName.Declare
+V.Local.sFilter.Declare
+V.Local.sHeat.Declare
+V.Local.sIssueDate.Declare
+V.Local.sLot.Declare
+V.Local.sMessage.Declare
+V.Local.sParam.Declare
+V.Local.sPart.Declare
+V.Local.sQtyIssue.Declare
+V.Local.sQuery.Declare
+V.Local.sReference.Declare
+V.Local.sRev.Declare
+V.Local.sRows.Declare
+V.Local.sSeq.Declare
+V.Local.sSerial.Declare
+V.Local.sUser.Declare
+V.Local.sTranTimeBegin.Declare
+V.Local.sTranTimeEnd.Declare
+
+F.Intrinsic.UI.InvokeWaitDialog("Issuing selected material.......","Issue Material Request [ARC 6370]")
+
+'Check if WO is currently opened by a user at x_lock_file table
+F.Intrinsic.Control.CallSub(checklockfile,"Cnt",".dtRequest(V.Global.iReq)")
+
+F.Intrinsic.Control.If(V.Global.bLock,=,False)
+	'Preparing file name to be called by callwrapper
+	F.Intrinsic.String.Concat("I",V.Caller.CompanyCode,"IF",V.Caller.Terminal,V.Local.sParam)
+	F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Local.sParam,V.Local.sFileName)
+	
+	V.Local.sPart.Set(V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim)
+	F.Intrinsic.String.Len(V.Local.sPart,V.Local.iLen)
+	
+	F.Intrinsic.Control.If(V.Local.iLen,>,17)
+		F.Intrinsic.String.Mid(V.Local.sPart,18,V.Local.sRev)
+		F.Intrinsic.String.Left(V.Local.sPart,17,V.Local.sPart)
+	F.Intrinsic.Control.Else
+		V.Local.sRev.Set("")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Format(V.Args.fIssue,"0.0000",V.Local.sQtyIssue)
+	
+	'Lot/bin information if the part is flagged as lot/bin
+	V.Local.sBin.Set("")
+	V.Local.sHeat.Set("")
+	V.Local.sLot.Set("")
+	V.Local.sSerial.Set("")
+	
+	F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs00",V.Local.sTranTimeBegin)
+	
+	'Preparing the file format
+'	F.Data.DataTable.AddRow("450100","Part",V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,"Location",V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,"WOSuffix",V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,"WOSeq",V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim)
+	F.Data.DataTable.AddRow("450100","Part",V.Local.sPart.Trim,"Rev",V.Local.sRev.Trim,"Location",V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,"WOSuffix",V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,"WOSeq",V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim)
+	F.Intrinsic.Control.CallSub(450100Sync)
+'	F.Intrinsic.String.Concat(V.Local.sPart.Trim,",",V.Local.sRev.Trim,",",V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,",",V.Local.sQtyIssue.Trim,",",V.Local.sLot.Trim,",",V.Local.sBin.Trim,",",V.Local.sHeat.Trim,V.Local.sFile)
+'	F.Intrinsic.String.Concat(V.Local.sFile,",",V.Local.sSerial.Trim,",",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,",",V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,",",V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.Local.sFile)
+'	F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sFile)
+'	F.Global.General.CallWrapperSync(450100,V.Local.sParam)
+
+	F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs99",V.Local.sTranTimeEnd)
+	
+	'Check for successful processing of transactions
+	F.Intrinsic.String.Format(V.Ambient.Date,"YYMMDD",V.Local.sIssueDate)
+	V.Local.dIssued.Set(V.Ambient.Date)
+	F.Intrinsic.Math.Mult(-1,V.Args.fIssue,V.Local.fQtyIssued)
+	V.Local.sUser.Set(V.Caller.User)
+	F.Intrinsic.String.Build("select part, Refer_2 from inventory_hist where date_history = '{0}' and part = '{1}' and location = '{2}' and job = '{3}' and suffix = '{4}' and seq = '{5}' and quantity = {6} and userid = '{7}' and inv_hist_time >= '{8}' and inv_hist_time <= '{9}' and code_transaction = 'J55'",V.Local.sIssueDate.Trim,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.Local.fQtyIssued,V.Local.sUser.Trim,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+		F.ODBC.conx!rst.Set!Refer_2(V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldVal)
+		F.ODBC.conx!rst.Update
+		F.ODBC.conx!rst.Close
+		'Check JOB_TRANS_ERR if issue is failed
+		F.Intrinsic.String.Build("select description, msg_id, filename from v_job_trans_err where job = '{0}' and suffix = '{1}' and seq = '{2}' and part = '{3}' and loc = '{4}' and tran_date = '{5}' and err_time >= '{6}' and err_time <= '{7}' and program = 'JB0320'",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.Local.dIssued.PervasiveDate,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			F.Intrinsic.String.Build("There was an error in material issue with the following description: {1}{0}Message ID: {2}, Filename: {3}{0}For work order: {4}-{5}, sequence: {6}, part: {7}",V.Ambient.NewLine,V.ODBC.conx!rst.FieldVal!description,V.ODBC.conx!rst.FieldVal!msg_id,V.ODBC.conx!rst.FieldVal!filename,V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.Local.sMessage)
+			F.Intrinsic.UI.Msgbox(V.Local.sMessage,"Issue Material Request [ARC 6370]")
+		F.Intrinsic.Control.Else
+		
+			F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sIssueDate)
+			
+			'Adding the record to BI_SF_AUDIT for audit trail printout
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.DateString(V.Ambient.Date,V.Local.sDate)
+			F.Intrinsic.String.Left(V.DataTable.dtRequest(V.Global.iReq).Description!FieldValTrim,30,V.Local.sDescription)
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, trans, job, suffix, category, descr, reference, tran_date, qty_1, heading) values('{0}','001862','{1}','L','02','{2}','{3}','{4}','{5}','{6}','{7}',{8},'Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.Local.sDescription.PSQLFriendly,V.Local.sPart.PSQLFriendly,V.Local.sDate.Trim,V.Args.fIssue,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.Build("Request {0} - {1}",V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldValLong,V.DataTable.dtRequest(V.Global.iReq).Line!FieldValLong,V.Local.sReference)
+			F.Intrinsic.String.Build("Area: {0}",V.DataTable.dtRequest(V.Global.iReq).Area!FieldValTrim,V.Local.sDescription)
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, descr, reference, heading) values('{0}','001862','{1}','L','{2}','{3}','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sDescription.PSQLFriendly,V.Local.sReference.Trim,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, heading) values('{0}','001862','{1}','L1','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			
+			F.Intrinsic.Math.Add(V.DataTable.dtRequest(V.Global.iReq).QtyIssued!FieldValTrim,V.Args.fIssue,V.Local.fQtyIssued)
+			F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Global.iReq).QtyReq!FieldValTrim,=,V.Local.fQtyIssued)
+				F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, status = 1, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldValLong,V.DataTable.dtRequest(V.Global.iReq).Line!FieldValLong,V.Local.fQtyIssued,V.Local.sIssueDate.Trim,V.Local.sQuery)
+				F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+				
+				F.Intrinsic.String.Build("Part = '{0}' and Loc = '{1}'",V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.Local.sFilter)
+				F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Global.iReq).Onhand!FieldValFloat,V.Args.fIssue,V.Local.fQtyRem)
+				F.Intrinsic.Control.If(V.Local.fQtyRem,<,0)
+					V.Local.fQtyRem.Set(0)
+				F.Intrinsic.Control.EndIf
+				F.Data.DataTable.Select("dtRequest",V.Local.sFilter,V.Local.sRows)
+				F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+				F.Intrinsic.Control.If(V.Local.sRows.UBound,>,0)
+					F.Intrinsic.Control.For(V.Local.i1,0,V.Local.sRows.UBound,1)
+						F.Data.DataTable.SetValue("dtRequest",V.Local.sRows(V.Local.i1),"Onhand",V.Local.fQtyRem)
+					F.Intrinsic.Control.Next(V.Local.i1)
+				F.Intrinsic.Control.EndIf
+				F.Data.DataTable.DeleteRow("dtRequest",V.Global.iReq)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldValLong,V.DataTable.dtRequest(V.Global.iReq).Line!FieldValLong,V.Local.fQtyIssued,V.Local.sIssueDate.Trim,V.Local.sQuery)
+				F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+				
+				F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Global.iReq).Request!FieldValTrim,V.Args.fIssue,V.Local.fQtyRem)
+				F.Data.DataTable.SetValue("dtRequest",V.Global.iReq,"Request",V.Local.fQtyRem)
+				
+				F.Intrinsic.String.Build("Part = '{0}' and Loc = '{1}'",V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.Local.sFilter)
+				F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Global.iReq).Onhand!FieldValFloat,V.Args.fIssue,V.Local.fQtyRem)
+				F.Intrinsic.Control.If(V.Local.fQtyRem,<,0)
+					V.Local.fQtyRem.Set(0)
+				F.Intrinsic.Control.EndIf
+				F.Data.DataTable.Select("dtRequest",V.Local.sFilter,V.Local.sRows)
+				F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+				F.Intrinsic.Control.If(V.Local.sRows.UBound,>,0)
+					F.Intrinsic.Control.For(V.Local.i1,0,V.Local.sRows.UBound,1)
+						F.Data.DataTable.SetValue("dtRequest",V.Local.sRows(V.Local.i1),"Onhand",V.Local.fQtyRem)
+					F.Intrinsic.Control.Next(V.Local.i1)
+				F.Intrinsic.Control.EndIf
+				Gui.F_IssueRequest.GsGCRequest.SetRowAppearance("gvReq",V.Global.iReq,"backcolor","White")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.EndIf
+Gui.F_IssueRequest.frameLotBin.Enabled(False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","ReadOnly",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","AllowEdit",True)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Submit","AllowEdit",False)
+F.Intrinsic.UI.CloseWaitDialog
+Program.Sub.IssueMaterial.End
+
+Program.Sub.gvLot_Properties.Start
+Gui.F_IssueRequest.GsGCLot.SetGridviewProperty("gvLot", "ColumnPanelRowHeight", 50)
+Gui.F_IssueRequest.GsGCLot.SetGridviewProperty("gvLot", "OptionsViewRowAutoHeight", true)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot", "Part", "AllowSize", true)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot", "Part", "HeaderFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Lot","HeaderFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Bin","HeaderFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Heat","HeaderFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Serial","HeaderFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","ExpDate","HeaderFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Quantity","HeaderFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Issue","HeaderFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot", "Part", "HeaderWordWrap", "wrap")
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot", "Part", "CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Lot","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Bin","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Heat","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Serial","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","ExpDate","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Quantity","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Issue","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot", "Part", "CellWordWrap", "wrap")
+
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Serial","Caption","Serial Number")
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","ExpDate","Caption","Expiration Date")
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Flag","ShowCaption",False)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Lot","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Bin","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Heat","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Serial","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","ExpDate","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Quantity","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Issue","CellFontSize", 11)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Lot","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Bin","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Heat","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","ExpDate","CellHAlignment","Center")
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","ExpDate","DisplayCustomDatetime","d")
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Quantity","DisplayCustomNumeric","##,###,##0.0000")
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Issue","DisplayCustomNumeric","##,###,##0.0000")
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Flag","ReadOnly",False)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Flag","AllowEdit",True)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Issue","ReadOnly",False)
+Gui.F_IssueRequest.GsGCLot.SetColumnProperty("gvLot","Issue","AllowEdit",True)
+Program.Sub.gvLot_Properties.End
+
+Program.Sub.gvLot_CheckBox.Start
+V.Local.fIssue.Declare
+V.Local.fRem.Declare
+V.Local.fTotal1.Declare
+V.Local.fTotal2.Declare
+V.Local.sTemp.Declare
+
+F.Intrinsic.Control.If(V.Global.iIssueSelected,=,0)
+	F.Intrinsic.Control.If(V.Args.Column,=,"Flag")
+		F.Intrinsic.Control.If(V.Args.Value,=,True)
+			F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",0)
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			V.Local.fTotal1.Set(V.DataTable.dtRequest(V.Global.iReq).Issue!FieldValFloat)
+			F.Intrinsic.Math.Sub(V.Local.fTotal1,V.Local.fTotal2,V.Local.fIssue)
+			F.Intrinsic.Control.If(V.Local.fIssue,>,0)
+				F.Intrinsic.Control.If(V.Local.fIssue,>,V.DataTable.dtLot(V.Args.RowIndex).Quantity!FieldValFloat)
+					F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",V.DataTable.dtLot(V.Args.RowIndex).Quantity!FieldValFloat)
+				F.Intrinsic.Control.Else
+					F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",V.Local.fIssue)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			F.Intrinsic.String.Format(V.Local.fTotal2,"#,0.0000",V.Local.sTemp)
+			Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",0)
+			
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			F.Intrinsic.String.Format(V.Local.fTotal2,"#,0.0000",V.Local.sTemp)
+			Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Issue")
+		V.Local.fIssue.Set(V.Args.Value)
+		F.Intrinsic.Control.If(V.Local.fIssue,>,0)
+			V.Local.fTotal1.Set(V.DataTable.dtRequest(V.Global.iReq).Issue!FieldValFloat)
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			F.Intrinsic.Control.If(V.Local.fTotal2,>,V.Local.fTotal1)
+				F.Intrinsic.Math.Sub(V.Local.fTotal2,V.Local.fTotal1,V.Local.fRem)
+				F.Intrinsic.Control.If(V.Local.fRem,>=,V.Local.fIssue)
+					F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",0)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.Math.sub(V.Local.fIssue,V.Local.fRem,V.Local.fIssue)
+					F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",V.Local.fIssue)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			F.Intrinsic.String.Format(V.Local.fTotal2,"#,0.0000",V.Local.sTemp)
+			Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+		F.Intrinsic.Control.else
+			F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",0)
+			
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			F.Intrinsic.String.Format(V.Local.fTotal2,"#,0.0000",V.Local.sTemp)
+			Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.ElseIf(V.Global.iIssueSelected,=,1)
+	F.Intrinsic.Control.If(V.Args.Column,=,"Flag")
+		F.Intrinsic.Control.If(V.Args.Value,=,True)
+			F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",0)
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			V.Local.fTotal1.Set(V.DataTable.dtPartTotal(0).Total!FieldValFloat)
+			F.Intrinsic.Math.Sub(V.Local.fTotal1,V.Local.fTotal2,V.Local.fIssue)
+			F.Intrinsic.Control.If(V.Local.fIssue,>,0)
+				F.Intrinsic.Control.If(V.Local.fIssue,>,V.DataTable.dtLot(V.Args.RowIndex).Quantity!FieldValFloat)
+					F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",V.DataTable.dtLot(V.Args.RowIndex).Quantity!FieldValFloat)
+				F.Intrinsic.Control.Else
+					F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",V.Local.fIssue)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			F.Intrinsic.String.Format(V.Local.fTotal2,"#,0.0000",V.Local.sTemp)
+			Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",0)
+			
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			F.Intrinsic.String.Format(V.Local.fTotal2,"#,0.0000",V.Local.sTemp)
+			Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Issue")
+		V.Local.fIssue.Set(V.Args.Value)
+		F.Intrinsic.Control.If(V.Local.fIssue,>,0)
+			V.Local.fTotal1.Set(V.DataTable.dtPartTotal(0).Total!FieldValFloat)
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			F.Intrinsic.Control.If(V.Local.fTotal2,>,V.Local.fTotal1)
+				F.Intrinsic.Math.Sub(V.Local.fTotal2,V.Local.fTotal1,V.Local.fRem)
+				F.Intrinsic.Control.If(V.Local.fRem,>=,V.Local.fIssue)
+					F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",0)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.Math.sub(V.Local.fIssue,V.Local.fRem,V.Local.fIssue)
+					F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",V.Local.fIssue)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			F.Intrinsic.String.Format(V.Local.fTotal2,"#,0.0000",V.Local.sTemp)
+			Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+		F.Intrinsic.Control.else
+			F.Data.DataTable.SetValue("dtLot",V.Args.RowIndex,"Issue",0)
+			
+			F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal2)
+			F.Intrinsic.String.Format(V.Local.fTotal2,"#,0.0000",V.Local.sTemp)
+			Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf	
+F.Intrinsic.Control.EndIf
+Program.Sub.gvLot_CheckBox.End
+
+'Program.Sub.LotBin_Issue.Start
+'V.Local.dIssued.Declare(Date)
+'V.Local.fQtyIssued.Declare
+'V.Local.fQtyRem.Declare
+'V.Local.fTotal.Declare
+'V.Local.i1.Declare
+'V.Local.iLen.Declare
+'V.Local.sBin.Declare
+'V.Local.sDate.Declare
+'V.Local.sDescription.Declare
+'V.Local.sFile.Declare
+'V.Local.sFileName.Declare
+'V.Local.sFilter.Declare
+'V.Local.sHeat.Declare
+'V.Local.sIssueDate.Declare
+'V.Local.sLot.Declare
+'V.Local.sMessage.Declare
+'V.Local.sParam.Declare
+'V.Local.sPart.Declare
+'V.Local.sQtyIssue.Declare
+'V.Local.sQuery.Declare
+'V.Local.sReference.Declare
+'V.Local.sRev.Declare
+'V.Local.sRows.Declare
+'V.Local.sSeq.Declare
+'V.Local.sSerial.Declare
+'V.Local.sUser.Declare
+'V.Local.sTranTimeBegin.Declare
+'V.Local.sTranTimeEnd.Declare
+'V.Local.iStatus.Declare
+
+'F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal)
+'F.Intrinsic.Control.If(V.Local.fTotal,>,0)
+'	F.Intrinsic.UI.InvokeWaitDialog("Issuing selected material.......","Issue Material Request [ARC 6370]")
+'	
+'	'Check if WO is currently opened by a user at x_lock_file table
+'	F.Intrinsic.Control.CallSub(checklockfile)
+'	
+'	F.Intrinsic.Control.If(V.Global.bLock,=,False)
+'		'Adding the record to BI_SF_AUDIT for audit trail printout
+'		F.Intrinsic.String.Build("select top 1 sequence from bi_sf_audit where trmnl = '{0}' and rptid = '001862' order by sequence desc",V.Caller.Terminal,V.Local.sQuery)
+'		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+'		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+'			V.Global.iBISeq.Set(1)
+'		F.Intrinsic.Control.Else
+'			F.Intrinsic.Math.ConvertToLong(V.ODBC.conx!rst.FieldValTrim!sequence,V.Global.iBISeq)
+'			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+'		F.Intrinsic.Control.EndIf
+'		F.ODBC.conx!rst.Close
+'		F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+'		F.Intrinsic.String.DateString(V.Ambient.Date,V.Local.sDate)
+'		V.Local.sPart.Set(V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim)
+'		F.Intrinsic.String.Len(V.Local.sPart,V.Local.iLen)
+'	
+'		F.Intrinsic.Control.If(V.Local.iLen,>,17)
+'			F.Intrinsic.String.Mid(V.Local.sPart,18,V.Local.sRev)
+'			F.Intrinsic.String.Left(V.Local.sPart,17,V.Local.sPart)
+'		F.Intrinsic.Control.Else
+'			V.Local.sRev.Set("")
+'		F.Intrinsic.Control.EndIf		
+'		
+'		F.Intrinsic.String.Left(V.DataTable.dtRequest(V.Global.iReq).Description!FieldValTrim,30,V.Local.sDescription)
+'		F.Intrinsic.String.Format(V.Local.fTotal,"#,0.0000",V.Local.sQtyIssue)
+'		F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, trans, job, suffix, category, descr, reference, tran_date, qty_1, heading) values('{0}','001862','{1}','L','02','{2}','{3}','{4}','{5}','{6}','{7}',{8},'Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.Local.sDescription.PSQLFriendly,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.Local.sDate.Trim,V.Local.fTotal,V.Local.sQuery)
+'		F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+'		F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+'		F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+'		F.Intrinsic.String.Build("Request {0} - {1}",V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldValLong,V.DataTable.dtRequest(V.Global.iReq).Line!FieldValLong,V.Local.sReference)
+'		F.Intrinsic.String.Build("Area: {0}",V.DataTable.dtRequest(V.Global.iReq).Area!FieldValTrim,V.Local.sDescription)
+'		F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, descr, reference, heading) values('{0}','001862','{1}','L','{2}','{3}','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sDescription.PSQLFriendly,V.Local.sReference.Trim,V.Local.sQuery)
+'		F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+'		F.Intrinsic.Control.For(V.Local.i1,V.DataTable.dtLot.RowCount--,0,-1)
+'			F.Intrinsic.Control.If(V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,>,0)
+'				'Use 450100 library to issue
+'				F.Intrinsic.String.Format(V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,"0.0000",V.Local.sQtyIssue)
+'				V.Local.sBin.Set(V.DataTable.dtLot(V.Local.i1).Bin!FieldValTrim)
+'				V.Local.sHeat.Set(V.DataTable.dtLot(V.Local.i1).Heat!FieldValTrim)
+'				V.Local.sLot.Set(V.DataTable.dtLot(V.Local.i1).Lot!FieldValTrim)
+'				V.Local.sSerial.Set(V.DataTable.dtLot(V.Local.i1).Serial!FieldValTrim)
+'				
+'				F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs00",V.Local.sTranTimeBegin)
+'				
+''				F.Data.DataTable.AddRow("450100","Part",V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,"Location",V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,"WOSuffix",V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,"WOSeq",V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim)
+'				F.Data.DataTable.AddRow("450100","Part",V.Local.sPart.Trim,"Rev",V.Local.sRev.Trim,"Location",V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,"WOSuffix",V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,"WOSeq",V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim)
+'				F.Intrinsic.Control.CallSub(450100Sync)
+''				'Preparing file name to be called by callwrapper
+''				F.Intrinsic.String.Concat("I",V.Caller.CompanyCode,"IF",V.Caller.Terminal,V.Local.sParam)
+''				F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Local.sParam,V.Local.sFileName)
+''				
+''				V.Local.sPart.Set(V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim)
+''				F.Intrinsic.String.Len(V.Local.sPart,V.Local.iLen)
+''				F.Intrinsic.Control.If(V.Local.iLen,>,17)
+''					F.Intrinsic.String.Mid(V.Local.sPart,17,V.Local.sRev)
+''					F.Intrinsic.String.Left(V.Local.sPart,17,V.Local.sPart)
+''				F.Intrinsic.Control.Else
+''					V.Local.sRev.Set("")
+''				F.Intrinsic.Control.EndIf
+''				F.Intrinsic.String.Format(V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,"0.0000",V.Local.sQtyIssue)
+''			
+''				V.Local.sBin.Set(V.DataTable.dtLot(V.Local.i1).Bin!FieldValTrim)
+''				V.Local.sHeat.Set(V.DataTable.dtLot(V.Local.i1).Heat!FieldValTrim)
+''				V.Local.sLot.Set(V.DataTable.dtLot(V.Local.i1).Lot!FieldValTrim)
+''				V.Local.sSerial.Set(V.DataTable.dtLot(V.Local.i1).Serial!FieldValTrim)
+''			
+''				'Preparing the file format
+''				F.Intrinsic.String.Concat(V.Local.sPart.Trim,",",V.Local.sRev.Trim,",",V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,",",V.Local.sQtyIssue.Trim,",",V.Local.sLot.Trim,",",V.Local.sBin.Trim,",",V.Local.sHeat.Trim,V.Local.sFile)
+''				F.Intrinsic.String.Concat(V.Local.sFile,",",V.Local.sSerial.Trim,",",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,",",V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,",",V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.Local.sFile)
+''				F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sFile)
+''				F.Global.General.CallWrapperSync(450100,V.Local.sParam)
+
+'				F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs99",V.Local.sTranTimeEnd)
+'				
+'				'Check if issued transaction is successful
+'				F.Intrinsic.String.Format(V.Ambient.Date,"YYMMDD",V.Local.sIssueDate)
+'				V.Local.dIssued.Set(V.Ambient.Date)
+'				V.Local.sUser.Set(V.Caller.User)
+'				F.Intrinsic.Math.Mult(-1,V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,V.Local.fQtyIssued)
+'				F.Intrinsic.String.Build("select part, Refer_2 from inventory_hist where date_history = '{0}' and part = '{1}' and location = '{2}' and job = '{3}' and suffix = '{4}' and seq = '{5}' and quantity = {6} and userid = '{7}' and inv_hist_time >= '{8}' and inv_hist_time <= '{9}' and code_transaction = 'J55'",V.Local.sIssueDate.Trim,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.Local.fQtyIssued,V.Local.sUser.Trim,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+'				F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+'				F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+'					V.Local.iStatus.Set(1)
+'				F.Intrinsic.Control.Else
+'					F.ODBC.conx!rst.Close
+'					F.Intrinsic.UI.Sleep(3)
+'					F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs99",V.Local.sTranTimeEnd)
+'					F.Intrinsic.String.Build("select part, Refer_2 from inventory_hist where date_history = '{0}' and part = '{1}' and location = '{2}' and job = '{3}' and suffix = '{4}' and seq = '{5}' and quantity = {6} and userid = '{7}' and inv_hist_time >= '{8}' and inv_hist_time <= '{9}' and code_transaction = 'J55'",V.Local.sIssueDate.Trim,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.Local.fQtyIssued,V.Local.sUser.Trim,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+'					F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+'					F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+'						V.Local.iStatus.Set(1)
+'					F.Intrinsic.Control.Else
+'						V.Local.iStatus.Set(0)
+'					F.Intrinsic.Control.EndIf
+'				F.Intrinsic.Control.EndIf
+'				
+'				F.Intrinsic.Control.If(V.Local.iStatus,=,1)
+'					F.ODBC.conx!rst.Set!Refer_2(V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldVal)
+'					F.ODBC.conx!rst.Update
+'					F.ODBC.conx!rst.Close
+'					'Check JOB_TRANS_ERR if issue is failed
+'					F.Intrinsic.String.Build("select description, msg_id, filename from v_job_trans_err where job = '{0}' and suffix = '{1}' and seq = '{2}' and part = '{3}' and loc = '{4}' and tran_date = '{5}' and err_time >= '{6}' and err_time <= '{7}' and program = 'JB0320'",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.Local.dIssued.PervasiveDate,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+'					F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+'					F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+'						F.Intrinsic.String.Build("There was an error in material issue with the following description: {1}{0}Message ID: {2}, Filename: {3}{0}For work order: {4}-{5}, sequence: {6}, part: {7}",V.Ambient.NewLine,V.ODBC.conx!rst.FieldVal!description,V.ODBC.conx!rst.FieldVal!msg_id,V.ODBC.conx!rst.FieldVal!filename,V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.Local.sMessage)
+'						F.Intrinsic.UI.Msgbox(V.Local.sMessage,"Issue Material Request [ARC 6370]")
+'					F.Intrinsic.Control.Else
+'						F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sIssueDate)
+'						
+'						F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+'						F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+'						F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, qty_2, lot, bin, heat, serial, heading) values('{0}','001862','{1}','L1',{2},'{3}','{4}','{5}','{6}','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,V.Local.sLot.Trim,V.Local.sBin.Trim,V.Local.sHeat.Trim,V.Local.sSerial.Trim,V.Local.sQuery)
+'						F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+'					F.Intrinsic.Control.EndIf
+'				F.Intrinsic.Control.Else
+'					'Transaction is not successful, substract the total issue qty with the lot/bin issue qty
+'					F.Intrinsic.String.Build("Failed issue from lot: {0}, bin: {1}, heat: {2}, serial: {3}",V.Local.sLot.Trim,V.Local.sBin.Trim,V.Local.sHeat.Trim,V.Local.sSerial.Trim,V.Local.sUser)
+'					F.Intrinsic.UI.Msgbox(V.Local.sUser,"Issue Material Request [ARC 6370]")
+'					F.Intrinsic.Math.Sub(V.Local.fTotal,V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,V.Local.fTotal)
+'				F.Intrinsic.Control.EndIf
+'				F.ODBC.conx!rst.Close
+'			F.Intrinsic.Control.EndIf
+'			F.Data.DataTable.DeleteRow("dtLot",V.Local.i1)
+'		F.Intrinsic.Control.Next(V.Local.i1)
+'		F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+'		F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+'		F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, heading) values('{0}','001862','{1}','L1','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sQuery)
+'		F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+'		
+'		F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+'		F.Intrinsic.Math.Add(V.DataTable.dtRequest(V.Global.iReq).QtyIssued!FieldValTrim,V.Local.fTotal,V.Local.fQtyIssued)
+'		F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sIssueDate)
+'		F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Global.iReq).QtyReq!FieldValTrim,=,V.Local.fQtyIssued)
+'			F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, status = 1, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldValLong,V.DataTable.dtRequest(V.Global.iReq).Line!FieldValLong,V.Local.fQtyIssued,V.Local.sIssueDate.Trim,V.Local.sQuery)
+'			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+'			
+'			F.Intrinsic.String.Build("Part = '{0}' and Loc = '{1}'",V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.Local.sFilter)
+'			F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Global.iReq).Onhand!FieldValFloat,V.Local.fTotal,V.Local.fQtyRem)
+'			F.Intrinsic.Control.If(V.Local.fQtyRem,<,0)
+'				V.Local.fQtyRem.Set(0)
+'			F.Intrinsic.Control.EndIf
+'			F.Data.DataTable.Select("dtRequest",V.Local.sFilter,V.Local.sRows)
+'			F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+'			F.Intrinsic.Control.If(V.Local.sRows.UBound,>,0)
+'				F.Intrinsic.Control.For(V.Local.i1,0,V.Local.sRows.UBound,1)
+'					F.Data.DataTable.SetValue("dtRequest",V.Local.sRows(V.Local.i1),"Onhand",V.Local.fQtyRem)
+'				F.Intrinsic.Control.Next(V.Local.i1)
+'			F.Intrinsic.Control.EndIf
+'			F.Data.DataTable.DeleteRow("dtRequest",V.Global.iReq)
+'		F.Intrinsic.Control.Else
+'			F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldValLong,V.DataTable.dtRequest(V.Global.iReq).Line!FieldValLong,V.Local.fQtyIssued,V.Local.sIssueDate.Trim,V.Local.sQuery)
+'			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+'			
+'			F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Global.iReq).Request!FieldValTrim,V.Local.fTotal,V.Local.fQtyRem)
+'			F.Data.DataTable.SetValue("dtRequest",V.Global.iReq,"Request",V.Local.fQtyRem)
+'			
+'			F.Intrinsic.String.Build("Part = '{0}' and Loc = '{1}'",V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.Local.sFilter)
+'			F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Global.iReq).Onhand!FieldValFloat,V.Local.fTotal,V.Local.fQtyRem)
+'			F.Intrinsic.Control.If(V.Local.fQtyRem,<,0)
+'				V.Local.fQtyRem.Set(0)
+'			F.Intrinsic.Control.EndIf
+'			F.Data.DataTable.Select("dtRequest",V.Local.sFilter,V.Local.sRows)
+'			F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+'			F.Intrinsic.Control.If(V.Local.sRows.UBound,>,0)
+'				F.Intrinsic.Control.For(V.Local.i1,0,V.Local.sRows.UBound,1)
+'					F.Data.DataTable.SetValue("dtRequest",V.Local.sRows(V.Local.i1),"Onhand",V.Local.fQtyRem)
+'				F.Intrinsic.Control.Next(V.Local.i1)
+'			F.Intrinsic.Control.EndIf
+'			Gui.F_IssueRequest.GsGCRequest.SetRowAppearance("gvReq",V.Global.iReq,"backcolor","White")
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.EndIf
+'	Gui.F_IssueRequest.frameLotBin.Enabled(False)
+'	Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","ReadOnly",False)
+'	Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","AllowEdit",True)
+'	Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Submit","AllowEdit",False)
+'	F.Intrinsic.UI.CloseWaitDialog
+'F.Intrinsic.Control.else
+'	F.Intrinsic.UI.Msgbox("Please select lot/bin to continue","Issue Material Request [ARC 6370]")
+'F.Intrinsic.Control.EndIf
+'Program.Sub.LotBin_Issue.End
+
+Program.Sub.LotBin_Issue0.Start
+V.Local.sFilter.Declare
+V.Local.iCnt.Declare
+V.Local.i1.Declare
+V.Local.fIssueRem.Declare
+V.Local.fIssueRemLot.Declare
+V.Local.sQuery.Declare
+V.Local.sTemp.Declare
+V.Local.fTotalReq.Declare
+V.Local.fTotalSelected.Declare
+V.Local.fQtyIssued.Declare
+V.Local.iRet.Declare
+
+V.Local.fTotalReq.Set(V.Screen.F_IssueRequest!txtRequest.Text)
+V.Local.fTotalSelected.Set(V.Screen.F_IssueRequest!txtLotBin.Text)
+F.Intrinsic.Control.If(V.Global.iIssueSelected,=,1)
+	F.Intrinsic.Control.If(V.Local.fTotalReq,<>,V.Local.fTotalSelected)
+		'F.Intrinsic.UI.Msgbox("Total request qty is not equal to total selected qty. Please try again.")
+		F.Intrinsic.UI.Msgbox("Total request qty is not equal to total selected qty. Would you like to process?","Issue Material Request (6370)",4,V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,<>,6)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtIssueSelectedTemp.Exists,=,True)
+		F.Data.DataTable.Close("dtIssueSelectedTemp")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.Create("dtIssueSelected","dvIssueSelected0")
+	F.Intrinsic.String.Build("Part = '{0}'", V.Global.sPart, V.Global.sLoc, V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtIssueSelected","dvIssueSelected0",V.Local.sFilter)
+	F.Data.DataView.ToDataTable("dtIssueSelected","dvIssueSelected0","dtIssueSelectedTemp",True)
+	F.Data.DataView.Close("dtIssueSelected","dvIssueSelected0")
+	'F.Intrinsic.Debug.ShowCallerInfo
+
+	F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtIssueSelectedTemp.RowCount--, 1)
+		F.Intrinsic.Control.If(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat,>,0.00)
+			'Check for lot/bin
+			F.Intrinsic.String.Build("SELECT FLAG_LOT FROM V_INVENTORY_MSTR WHERE PART = '{0}' and location = '{1}'",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim,V.Local.sQuery)
+			F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+			V.Global.iReq.Set(V.Local.iCnt)
+			F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValTrim!FLAG_LOT,=,"Y")
+				F.Data.DataView.Create("dtLot","dvLot",22,"Issue <> 0","")
+				F.Data.DataView.ToDataTable("dtLot","dvLot","dtLot0",True)
+				F.Data.DataView.Close("dtLot","dvLot")
+				F.Data.DataTable.Close("dtLot")
+				F.Data.DataView.Create("dTLot0","dvLot",22,"Issue <> 0","")
+				F.Data.DataView.ToDataTable("dtLot0","dvLot","dtLot",True)
+				F.Data.DataView.Close("dtLot0","dvLot")
+				F.Data.DataTable.Close("dtLot0")
+				
+				F.Intrinsic.Control.If(V.DataTable.dtLot(0).Issue!FieldValFloat,>,0)
+					F.Intrinsic.Control.If(V.DataTable.dtLot(0).Issue!FieldValFloat,>=,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat)
+						F.Intrinsic.Control.CallSub(IssueMaterialAllSelectedLotBin,"fIssue",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat,"sBin",V.DataTable.dtLot(0).Bin!FieldValTrim,"sHeat",V.DataTable.dtLot(0).Heat!FieldValTrim,"sLot",V.DataTable.dtLot(0).Lot!FieldValTrim,"sSerial",V.DataTable.dtLot(0).Serial!FieldValTrim,"sPart",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,"sWO",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim, "sSuffix",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim, "sSeq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim, "iReqID",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).ReqID!FieldValLong, "iLine",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Line!FieldValLong, "sDesc",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Description!FieldValTrim, "sArea",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Area!FieldValTrim, "sLoc",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim, "fQtyIssued",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyIssued!FieldValFloat, "fQtyReq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyReq!FieldValFloat)
+						F.Intrinsic.Math.Sub(V.DataTable.dtLot(0).Issue!FieldValFloat,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat,V.Local.fIssueRem)
+						F.Data.DataTable.SetValue("dtLot",0,"Issue",V.Local.fIssueRem)
+						
+						F.Intrinsic.Math.Add(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat, V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyIssued!FieldValFloat, V.Local.fQtyIssued)
+						F.Data.DataTable.SetValue("dtIssueSelectedTemp",V.Local.iCnt,"Issue",0,"QtyIssued",V.Local.fQtyIssued)
+					F.Intrinsic.Control.Else
+						'F.Intrinsic.String.Build("Part: {2} {0}Loc: {3}{1}Quantity in Bin: {4} is not enough",V.Ambient.Tab,V.Ambient.NewLine,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim,V.DataTable.dtLot(0).Bin!FieldValTrim,V.Local.sMessage)
+						F.Intrinsic.Control.If(V.DataTable.dtLot.RowCount,>,1)
+							V.Local.fIssueRem.Set(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat)
+							F.Intrinsic.Control.For(V.Local.i1, 0, V.DataTable.dtLot.RowCount--, 1)
+								F.Intrinsic.Control.If(V.Local.fIssueRem,>,0)
+									F.Intrinsic.Control.If(V.Local.fIssueRem,>=,V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat)
+										F.Intrinsic.Control.CallSub(IssueMaterialAllSelectedLotBin,"fIssue",V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,"sBin",V.DataTable.dtLot(V.Local.i1).Bin!FieldValTrim,"sHeat",V.DataTable.dtLot(V.Local.i1).Heat!FieldValTrim,"sLot",V.DataTable.dtLot(V.Local.i1).Lot!FieldValTrim,"sSerial",V.DataTable.dtLot(V.Local.i1).Serial!FieldValTrim, "sPart",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,"sWO",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim, "sSuffix",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim, "sSeq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim, "iReqID",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).ReqID!FieldValLong, "iLine",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Line!FieldValLong, "sDesc",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Description!FieldValTrim, "sArea",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Area!FieldValTrim, "sLoc",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim, "fQtyIssued",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyIssued!FieldValFloat, "fQtyReq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyReq!FieldValFloat)
+										
+										F.Intrinsic.Math.Add(V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat, V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyIssued!FieldValFloat, V.Local.fQtyIssued)
+										F.Intrinsic.Math.Sub(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat,V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,V.Local.fIssueRem)
+										F.Data.DataTable.SetValue("dtIssueSelectedTemp",V.Local.iCnt,"Issue",V.Local.fIssueRem, "QtyIssued",V.Local.fQtyIssued)
+										
+										F.Data.DataTable.SetValue("dtLot",V.Local.i1,"Issue",0)
+									F.Intrinsic.Control.Else
+										F.Intrinsic.Control.CallSub(IssueMaterialAllSelectedLotBin,"fIssue",V.Local.fIssueRem,"sBin",V.DataTable.dtLot(V.Local.i1).Bin!FieldValTrim,"sHeat",V.DataTable.dtLot(V.Local.i1).Heat!FieldValTrim,"sLot",V.DataTable.dtLot(V.Local.i1).Lot!FieldValTrim,"sSerial",V.DataTable.dtLot(V.Local.i1).Serial!FieldValTrim, "sPart",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,"sWO",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim, "sSuffix",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim, "sSeq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim, "iReqID",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).ReqID!FieldValLong, "iLine",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Line!FieldValLong, "sDesc",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Description!FieldValTrim, "sArea",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Area!FieldValTrim, "sLoc",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim, "fQtyIssued",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyIssued!FieldValFloat, "fQtyReq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyReq!FieldValFloat)
+
+										F.Intrinsic.Math.Sub(V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,V.Local.fIssueRem,V.Local.fIssueRemLot)
+										F.Data.DataTable.SetValue("dtLot",V.Local.i1,"Issue",V.Local.fIssueRemLot)
+										
+										F.Intrinsic.Math.Add(V.Local.fIssueRem, V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyIssued!FieldValFloat, V.Local.fQtyIssued)
+										F.Intrinsic.Math.Sub(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat,V.Local.fIssueRem,V.Local.fIssueRem)
+										F.Data.DataTable.SetValue("dtIssueSelectedTemp",V.Local.iCnt,"Issue",V.Local.fIssueRem, "QtyIssued",V.Local.fQtyIssued)
+									F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.EndIf
+							F.Intrinsic.Control.Next(V.Local.i1)
+						F.Intrinsic.Control.ElseIf(V.DataTable.dtLot.RowCount,=,1)
+							F.Intrinsic.Control.CallSub(IssueMaterialAllSelectedLotBin,"fIssue",V.DataTable.dtLot(0).Issue!FieldValFloat,"sBin",V.DataTable.dtLot(0).Bin!FieldValTrim,"sHeat",V.DataTable.dtLot(0).Heat!FieldValTrim,"sLot",V.DataTable.dtLot(0).Lot!FieldValTrim,"sSerial",V.DataTable.dtLot(0).Serial!FieldValTrim, "sPart",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,"sWO",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim, "sSuffix",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim, "sSeq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim, "iReqID",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).ReqID!FieldValLong, "iLine",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Line!FieldValLong, "sDesc",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Description!FieldValTrim, "sArea",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Area!FieldValTrim, "sLoc",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim, "fQtyIssued",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyIssued!FieldValFloat, "fQtyReq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyReq!FieldValFloat)
+							F.Intrinsic.Math.Sub(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat,V.DataTable.dtLot(0).Issue!FieldValFloat,V.Local.fIssueRem)
+							F.Data.DataTable.SetValue("dtLot",0,"Issue",V.Local.fIssueRem)
+							
+							F.Intrinsic.Math.Add(V.DataTable.dtLot(0).Issue!FieldValFloat, V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyIssued!FieldValFloat, V.Local.fQtyIssued)
+							F.Intrinsic.Math.Sub(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat,V.DataTable.dtLot(0).Issue!FieldValFloat,V.Local.fIssueRem)
+							F.Data.DataTable.SetValue("dtIssueSelectedTemp",V.Local.iCnt,"Issue",V.Local.fIssueRem, "QtyIssued",V.Local.fQtyIssued)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf	
+'				F.Intrinsic.Control.If(V.DataTable.dtLot.Exists,=,True)
+'					F.Data.DataTable.Close("dtLot")
+'				F.Intrinsic.Control.EndIf
+'				F.Intrinsic.String.Build("SELECT LOT as Lot,BIN as Bin,HEAT as Heat,SERIAL_NUMBER as Serial, date_expiration as ExpDate, QUANTITY as Quantity FROM V_ITEM_MASTER WHERE PART = '{0}' and location = '{1}' AND QUANTITY > 0 ORDER BY QUANTITY DESC",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim,V.Local.sQuery)
+'				F.Data.DataTable.CreateFromSQL("dtLot","conx",V.Local.sQuery,True)
+
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.CallSub(IssueMaterialAllSelected,"fIssue",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat,"sBin","", "sHeat","", "sLot","", "sSerial","", "sPart",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim, "sLoc",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim, "sWO",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim, "sSuffix",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim, "sSeq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim, "iReqID",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).ReqID!FieldValLong, "iLine",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Line!FieldValLong, "sDesc",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Description!FieldValTrim, "sArea",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Area!FieldValTrim, "fQtyIssued",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyIssued!FieldValFloat, "fQtyReq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyReq!FieldValFloat)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conx!rst.Close
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+
+'	F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtIssueSelectedTemp.RowCount--, 1)
+'		F.Intrinsic.Control.CallSub(LotBin_IssueSelected,"iCnt",V.Local.iCnt)
+'	F.Intrinsic.Control.Next(V.Local.iCnt)
+'	Gui.F_IssueRequest.frameLotBin.Enabled(False)
+'	F.Intrinsic.Control.If(V.DataTable.dtLot.Exists,=,True)
+'		F.Data.DataTable.Close("dtLot")
+'	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.SetValue("dtPartTotal",0,"Status",1)
+	F.Intrinsic.Control.CallSub(cmdIssueSelected_Click)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Local.fTotalReq,<>,V.Local.fTotalSelected)
+		'F.Intrinsic.UI.Msgbox("Total request qty is not equal to total selected qty. Please try again.")
+		F.Intrinsic.UI.Msgbox("Total request qty is not equal to total selected qty. Would you like to process?","Issue Material Request (6370)",4,V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,<>,6)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.CallSub(LotBin_Issue)
+	
+	F.Intrinsic.String.Format(0,"#,0.0000",V.Local.sTemp)
+	Gui.F_IssueRequest.txtRequest.Text(V.Local.sTemp)
+	F.Intrinsic.String.Format(0,"#,0.0000",V.Local.sTemp)
+	Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+	
+	F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+F.Intrinsic.Control.EndIf
+
+Program.Sub.LotBin_Issue0.End
+
+Program.Sub.LotBin_IssueSelected.Start
+V.Local.dIssued.Declare(Date)
+V.Local.fQtyIssued.Declare
+V.Local.fQtyRem.Declare
+V.Local.fTotal.Declare
+V.Local.i1.Declare
+V.Local.iLen.Declare
+V.Local.sBin.Declare
+V.Local.sDate.Declare
+V.Local.sDescription.Declare
+V.Local.sFile.Declare
+V.Local.sFileName.Declare
+V.Local.sFilter.Declare
+V.Local.sHeat.Declare
+V.Local.sIssueDate.Declare
+V.Local.sLot.Declare
+V.Local.sMessage.Declaref
+V.Local.sParam.Declare
+V.Local.sPart.Declare
+V.Local.sQtyIssue.Declare
+V.Local.sQuery.Declare
+V.Local.sReference.Declare
+V.Local.sRev.Declare
+V.Local.sRows.Declare
+V.Local.sSeq.Declare
+V.Local.sSerial.Declare
+V.Local.sUser.Declare
+V.Local.sTranTimeBegin.Declare
+V.Local.sTranTimeEnd.Declare
+V.Local.iStatus.Declare
+V.Local.sJob.Declare
+V.Local.sSuffix.Declare
+V.Local.sSQL.Declare
+V.Local.iCnt.Declare
+
+F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal)
+F.Intrinsic.Control.If(V.Local.fTotal,>,0)
+	F.Intrinsic.UI.InvokeWaitDialog("Issuing selected material.......","Issue Material Request [ARC 6370]")
+	V.Local.iCnt.Set(V.Args.iCnt)
+'	F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtIssueSelectedTemp.RowCount--, 1)
+	
+		'Check if WO is currently opened by a user at x_lock_file table
+		V.Local.sJob.Set(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldVal)
+		V.Local.sSuffix.Set(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldVal)
+'		F.Intrinsic.Debug.ShowCallerInfo
+		F.Intrinsic.String.Build("select user_id from x_lock_file where company = '{0}' and lock_type = 'WO' and rec_key = '{1}-{2}'",V.Caller.CompanyCode,V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			V.Global.bLock.Set(True)
+			F.Intrinsic.String.Build("Issue material cannot be processed. WO {0}-{1} is currently being opened by user {2}",V.Local.sJob,V.Local.sSuffix,V.ODBC.conx!rst.FieldVal!user_id,V.Local.sSQL)
+			F.Intrinsic.UI.Msgbox(V.Local.sSQL,"Issue Material Request [ARC 6370]")
+		F.Intrinsic.Control.Else
+			V.Global.bLock.Set(False)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+		
+		F.Intrinsic.Control.If(V.Global.bLock,=,False)
+			'Adding the record to BI_SF_AUDIT for audit trail printout
+			F.Intrinsic.String.Build("select top 1 sequence from bi_sf_audit where trmnl = '{0}' and rptid = '001862' order by sequence desc",V.Caller.Terminal,V.Local.sQuery)
+			F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+			F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+				V.Global.iBISeq.Set(1)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Math.ConvertToLong(V.ODBC.conx!rst.FieldValTrim!sequence,V.Global.iBISeq)
+				F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conx!rst.Close
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.DateString(V.Ambient.Date,V.Local.sDate)
+			V.Local.sPart.Set(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim)
+			F.Intrinsic.String.Len(V.Local.sPart,V.Local.iLen)
+		
+			F.Intrinsic.Control.If(V.Local.iLen,>,17)
+				F.Intrinsic.String.Mid(V.Local.sPart,18,V.Local.sRev)
+				F.Intrinsic.String.Left(V.Local.sPart,17,V.Local.sPart)
+			F.Intrinsic.Control.Else
+				V.Local.sRev.Set("")
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.String.Left(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Description!FieldValTrim,30,V.Local.sDescription)
+			F.Intrinsic.String.Format(V.Local.fTotal,"#,0.0000",V.Local.sQtyIssue)
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, trans, job, suffix, category, descr, reference, tran_date, qty_1, heading) values('{0}','001862','{1}','L','02','{2}','{3}','{4}','{5}','{6}','{7}',{8},'Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim,V.Local.sDescription.PSQLFriendly,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,V.Local.sDate.Trim,V.Local.fTotal,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.Build("Request {0} - {1}",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).ReqID!FieldValLong,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Line!FieldValLong,V.Local.sReference)
+			F.Intrinsic.String.Build("Area: {0}",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Area!FieldValTrim,V.Local.sDescription)
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, descr, reference, heading) values('{0}','001862','{1}','L','{2}','{3}','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sDescription.PSQLFriendly,V.Local.sReference.Trim,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			'F.Intrinsic.Debug.ShowCallerInfo
+			F.Intrinsic.Control.If(V.DataTable.dtLot.RowCount--,>,0)
+				F.Intrinsic.Control.For(V.Local.i1,V.DataTable.dtLot.RowCount--,0,-1)
+					F.Intrinsic.Control.If(V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,>,0)
+						'Use 450100 library to issue
+						
+'						F.Intrinsic.Control.If(V.DataTable.dtLot(V.Local.i1).Quantity!FieldValFloat,>=,V.DataTable.dtIssueSelected(V.Local.iCnt).Issue!FieldValFloat)
+'							F.Intrinsic.Control.CallSub(IssueMaterialAllSelectedLotBin,"fIssue",V.DataTable.dtIssueSelected(V.Local.iCnt).Issue!FieldValFloat,"sBin",V.DataTable.dtLot(0).Bin!FieldValTrim,"sHeat",V.DataTable.dtLot(0).Heat!FieldValTrim,"sLot",V.DataTable.dtLot(0).Lot!FieldValTrim,"sSerial",V.DataTable.dtLot(0).Serial!FieldValTrim)
+'						F.Intrinsic.Control.Else
+'							F.Intrinsic.String.Build("Part: {2} {0}Loc: {3}{1}Quantity in Bin: {4} is not enough",V.Ambient.Tab,V.Ambient.NewLine,V.DataTable.dtIssueSelected(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelected(V.Local.iCnt).Loc!FieldValTrim,V.DataTable.dtLot(0).Bin!FieldValTrim,V.Local.sMessage)
+'						F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+'						F.Intrinsic.Control.EndIf
+						
+						F.Intrinsic.String.Format(V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,"0.0000",V.Local.sQtyIssue)
+'						F.Intrinsic.String.Format(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Issue!FieldValFloat,"0.0000",V.Local.sQtyIssue)
+						V.Local.sBin.Set(V.DataTable.dtLot(V.Local.i1).Bin!FieldValTrim)
+						V.Local.sHeat.Set(V.DataTable.dtLot(V.Local.i1).Heat!FieldValTrim)
+						V.Local.sLot.Set(V.DataTable.dtLot(V.Local.i1).Lot!FieldValTrim)
+						V.Local.sSerial.Set(V.DataTable.dtLot(V.Local.i1).Serial!FieldValTrim)
+						
+						F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs00",V.Local.sTranTimeBegin)
+						
+		'				F.Data.DataTable.AddRow("450100","Part",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,"Location",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim,"WOSuffix",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim,"WOSeq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim)
+						F.Data.DataTable.AddRow("450100","Part",V.Local.sPart.Trim,"Rev",V.Local.sRev.Trim,"Location",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim,"WOSuffix",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim,"WOSeq",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim)
+						F.Intrinsic.Control.CallSub(450100Sync)
+		'				'Preparing file name to be called by callwrapper
+		'				F.Intrinsic.String.Concat("I",V.Caller.CompanyCode,"IF",V.Caller.Terminal,V.Local.sParam)
+		'				F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Local.sParam,V.Local.sFileName)
+		'				
+		'				V.Local.sPart.Set(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim)
+		'				F.Intrinsic.String.Len(V.Local.sPart,V.Local.iLen)
+		'				F.Intrinsic.Control.If(V.Local.iLen,>,17)
+		'					F.Intrinsic.String.Mid(V.Local.sPart,17,V.Local.sRev)
+		'					F.Intrinsic.String.Left(V.Local.sPart,17,V.Local.sPart)
+		'				F.Intrinsic.Control.Else
+		'					V.Local.sRev.Set("")
+		'				F.Intrinsic.Control.EndIf
+		'				F.Intrinsic.String.Format(V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,"0.0000",V.Local.sQtyIssue)
+		'			
+		'				V.Local.sBin.Set(V.DataTable.dtLot(V.Local.i1).Bin!FieldValTrim)
+		'				V.Local.sHeat.Set(V.DataTable.dtLot(V.Local.i1).Heat!FieldValTrim)
+		'				V.Local.sLot.Set(V.DataTable.dtLot(V.Local.i1).Lot!FieldValTrim)
+		'				V.Local.sSerial.Set(V.DataTable.dtLot(V.Local.i1).Serial!FieldValTrim)
+		'			
+		'				'Preparing the file format
+		'				F.Intrinsic.String.Concat(V.Local.sPart.Trim,",",V.Local.sRev.Trim,",",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim,",",V.Local.sQtyIssue.Trim,",",V.Local.sLot.Trim,",",V.Local.sBin.Trim,",",V.Local.sHeat.Trim,V.Local.sFile)
+		'				F.Intrinsic.String.Concat(V.Local.sFile,",",V.Local.sSerial.Trim,",",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim,",",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim,",",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim,V.Local.sFile)
+		'				F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sFile)
+		'				F.Global.General.CallWrapperSync(450100,V.Local.sParam)
+		
+						F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs99",V.Local.sTranTimeEnd)
+						
+						'Check if issued transaction is successful
+						F.Intrinsic.String.Format(V.Ambient.Date,"YYMMDD",V.Local.sIssueDate)
+						V.Local.dIssued.Set(V.Ambient.Date)
+						V.Local.sUser.Set(V.Caller.User)
+						F.Intrinsic.Math.Mult(-1,V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,V.Local.fQtyIssued)
+						F.Intrinsic.String.Build("select part, Refer_2 from inventory_hist where date_history = '{0}' and part = '{1}' and location = '{2}' and job = '{3}' and suffix = '{4}' and seq = '{5}' and quantity = {6} and userid = '{7}' and inv_hist_time >= '{8}' and inv_hist_time <= '{9}' and code_transaction = 'J55'",V.Local.sIssueDate.Trim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim,V.Local.fQtyIssued,V.Local.sUser.Trim,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+						F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+						F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+							V.Local.iStatus.Set(1)
+						F.Intrinsic.Control.Else
+							F.ODBC.conx!rst.Close
+							F.Intrinsic.UI.Sleep(3)
+							F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs99",V.Local.sTranTimeEnd)
+							F.Intrinsic.String.Build("select part, Refer_2 from inventory_hist where date_history = '{0}' and part = '{1}' and location = '{2}' and job = '{3}' and suffix = '{4}' and seq = '{5}' and quantity = {6} and userid = '{7}' and inv_hist_time >= '{8}' and inv_hist_time <= '{9}' and code_transaction = 'J55'",V.Local.sIssueDate.Trim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim,V.Local.fQtyIssued,V.Local.sUser.Trim,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+							F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+							F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+								V.Local.iStatus.Set(1)
+							F.Intrinsic.Control.Else
+								V.Local.iStatus.Set(0)
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.EndIf
+						
+						F.Intrinsic.Control.If(V.Local.iStatus,=,1)
+							F.ODBC.conx!rst.Set!Refer_2(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).ReqID!FieldVal)
+							F.ODBC.conx!rst.Update
+							F.ODBC.conx!rst.Close
+							'Check JOB_TRANS_ERR if issue is failed
+							F.Intrinsic.String.Build("select description, msg_id, filename from v_job_trans_err where job = '{0}' and suffix = '{1}' and seq = '{2}' and part = '{3}' and loc = '{4}' and tran_date = '{5}' and err_time >= '{6}' and err_time <= '{7}' and program = 'JB0320'",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim,V.Local.dIssued.PervasiveDate,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+							F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+							F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+								F.Intrinsic.String.Build("There was an error in material issue with the following description: {1}{0}Message ID: {2}, Filename: {3}{0}For work order: {4}-{5}, sequence: {6}, part: {7}",V.Ambient.NewLine,V.ODBC.conx!rst.FieldVal!description,V.ODBC.conx!rst.FieldVal!msg_id,V.ODBC.conx!rst.FieldVal!filename,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Job!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Suffix!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Sequence!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,V.Local.sMessage)
+								F.Intrinsic.UI.Msgbox(V.Local.sMessage,"Issue Material Request [ARC 6370]")
+							F.Intrinsic.Control.Else
+								F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sIssueDate)
+								
+								F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+								F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+								F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, qty_2, lot, bin, heat, serial, heading) values('{0}','001862','{1}','L1',{2},'{3}','{4}','{5}','{6}','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,V.Local.sLot.Trim,V.Local.sBin.Trim,V.Local.sHeat.Trim,V.Local.sSerial.Trim,V.Local.sQuery)
+								F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.Else
+							'Transaction is not successful, substract the total issue qty with the lot/bin issue qty
+							F.Intrinsic.String.Build("Failed issue from lot: {0}, bin: {1}, heat: {2}, serial: {3}",V.Local.sLot.Trim,V.Local.sBin.Trim,V.Local.sHeat.Trim,V.Local.sSerial.Trim,V.Local.sUser)
+							F.Intrinsic.UI.Msgbox(V.Local.sUser,"Issue Material Request [ARC 6370]")
+							'F.Intrinsic.Math.Sub(V.Local.fTotal,V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,V.Local.fTotal)
+						F.Intrinsic.Control.EndIf
+						F.ODBC.conx!rst.Close
+					F.Intrinsic.Control.EndIf
+					'F.Data.DataTable.DeleteRow("dtLot",V.Local.i1)
+				F.Intrinsic.Control.Next(V.Local.i1)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, heading) values('{0}','001862','{1}','L1','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			F.Intrinsic.Math.Add(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyIssued!FieldValTrim,V.Local.fTotal,V.Local.fQtyIssued)
+			F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sIssueDate)
+			F.Intrinsic.Control.If(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).QtyReq!FieldValTrim,=,V.Local.fQtyIssued)
+				F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, status = 1, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).ReqID!FieldValLong,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Line!FieldValLong,V.Local.fQtyIssued,V.Local.sIssueDate.Trim,V.Local.sQuery)
+				F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+				
+				F.Intrinsic.String.Build("Part = '{0}' and Loc = '{1}'",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim,V.Local.sFilter)
+				F.Intrinsic.Math.Sub(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Onhand!FieldValFloat,V.Local.fTotal,V.Local.fQtyRem)
+				F.Intrinsic.Control.If(V.Local.fQtyRem,<,0)
+					V.Local.fQtyRem.Set(0)
+				F.Intrinsic.Control.EndIf
+				F.Data.DataTable.Select("dtRequest",V.Local.sFilter,V.Local.sRows)
+				F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+				F.Intrinsic.Control.If(V.Local.sRows.UBound,>,0)
+					F.Intrinsic.Control.For(V.Local.i1,0,V.Local.sRows.UBound,1)
+						F.Data.DataTable.SetValue("dtRequest",V.Local.sRows(V.Local.i1),"Onhand",V.Local.fQtyRem)
+					F.Intrinsic.Control.Next(V.Local.i1)
+				F.Intrinsic.Control.EndIf
+				F.Data.DataTable.DeleteRow("dtRequest",V.Global.iReq)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).ReqID!FieldValLong,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Line!FieldValLong,V.Local.fQtyIssued,V.Local.sIssueDate.Trim,V.Local.sQuery)
+				F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+				
+				F.Intrinsic.Math.Sub(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Request!FieldValTrim,V.Local.fTotal,V.Local.fQtyRem)
+				F.Data.DataTable.SetValue("dtRequest",V.Global.iReq,"Request",V.Local.fQtyRem)
+				
+				F.Intrinsic.String.Build("Part = '{0}' and Loc = '{1}'",V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Loc!FieldValTrim,V.Local.sFilter)
+				F.Intrinsic.Math.Sub(V.DataTable.dtIssueSelectedTemp(V.Local.iCnt).Onhand!FieldValFloat,V.Local.fTotal,V.Local.fQtyRem)
+				F.Intrinsic.Control.If(V.Local.fQtyRem,<,0)
+					V.Local.fQtyRem.Set(0)
+				F.Intrinsic.Control.EndIf
+				F.Data.DataTable.Select("dtRequest",V.Local.sFilter,V.Local.sRows)
+				F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+				F.Intrinsic.Control.If(V.Local.sRows.UBound,>,0)
+					F.Intrinsic.Control.For(V.Local.i1,0,V.Local.sRows.UBound,1)
+						F.Data.DataTable.SetValue("dtRequest",V.Local.sRows(V.Local.i1),"Onhand",V.Local.fQtyRem)
+					F.Intrinsic.Control.Next(V.Local.i1)
+				F.Intrinsic.Control.EndIf
+				Gui.F_IssueRequest.GsGCRequest.SetRowAppearance("gvReq",V.Global.iReq,"backcolor","White")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		Gui.F_IssueRequest.frameLotBin.Enabled(False)
+		Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","ReadOnly",False)
+		Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","AllowEdit",True)
+		Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Submit","AllowEdit",False)
+'	F.Intrinsic.Control.Next(V.Local.iCnt)
+	F.Data.DataTable.SetValue("dtPartTotal",0,"Status",1)
+	F.Intrinsic.UI.CloseWaitDialog
+F.Intrinsic.Control.else
+	F.Intrinsic.UI.Msgbox("Please select lot/bin to continue","Issue Material Request [ARC 6370]")
+F.Intrinsic.Control.EndIf
+Program.Sub.LotBin_IssueSelected.End
+
+Program.Sub.LotBin_Issue.Start
+V.Local.dIssued.Declare(Date)
+V.Local.fQtyIssued.Declare
+V.Local.fQtyRem.Declare
+V.Local.fTotal.Declare
+V.Local.i1.Declare
+V.Local.iLen.Declare
+V.Local.sBin.Declare
+V.Local.sDate.Declare
+V.Local.sDescription.Declare
+V.Local.sFile.Declare
+V.Local.sFileName.Declare
+V.Local.sFilter.Declare
+V.Local.sHeat.Declare
+V.Local.sIssueDate.Declare
+V.Local.sLot.Declare
+V.Local.sMessage.Declare
+V.Local.sParam.Declare
+V.Local.sPart.Declare
+V.Local.sQtyIssue.Declare
+V.Local.sQuery.Declare
+V.Local.sReference.Declare
+V.Local.sRev.Declare
+V.Local.sRows.Declare
+V.Local.sSeq.Declare
+V.Local.sSerial.Declare
+V.Local.sUser.Declare
+V.Local.sTranTimeBegin.Declare
+V.Local.sTranTimeEnd.Declare
+V.Local.iStatus.Declare
+
+F.Data.DataTable.Compute("dtLot","SUM(Issue)","",V.Local.fTotal)
+F.Intrinsic.Control.If(V.Local.fTotal,>,0)
+	F.Intrinsic.UI.InvokeWaitDialog("Issuing selected material.......","Issue Material Request [ARC 6370]")
+	
+	'Check if WO is currently opened by a user at x_lock_file table
+	F.Intrinsic.Control.CallSub(checklockfile)
+	
+	F.Intrinsic.Control.If(V.Global.bLock,=,False)
+		'Adding the record to BI_SF_AUDIT for audit trail printout
+		F.Intrinsic.String.Build("select top 1 sequence from bi_sf_audit where trmnl = '{0}' and rptid = '001862' order by sequence desc",V.Caller.Terminal,V.Local.sQuery)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+			V.Global.iBISeq.Set(1)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.ConvertToLong(V.ODBC.conx!rst.FieldValTrim!sequence,V.Global.iBISeq)
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+		F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+		F.Intrinsic.String.DateString(V.Ambient.Date,V.Local.sDate)
+		V.Local.sPart.Set(V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim)
+		F.Intrinsic.String.Len(V.Local.sPart,V.Local.iLen)
+	
+		F.Intrinsic.Control.If(V.Local.iLen,>,17)
+			F.Intrinsic.String.Mid(V.Local.sPart,18,V.Local.sRev)
+			F.Intrinsic.String.Left(V.Local.sPart,17,V.Local.sPart)
+		F.Intrinsic.Control.Else
+			V.Local.sRev.Set("")
+		F.Intrinsic.Control.EndIf		
+		
+		F.Intrinsic.String.Left(V.DataTable.dtRequest(V.Global.iReq).Description!FieldValTrim,30,V.Local.sDescription)
+		F.Intrinsic.String.Format(V.Local.fTotal,"#,0.0000",V.Local.sQtyIssue)
+		F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, trans, job, suffix, category, descr, reference, tran_date, qty_1, heading) values('{0}','001862','{1}','L','02','{2}','{3}','{4}','{5}','{6}','{7}',{8},'Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.Local.sDescription.PSQLFriendly,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.Local.sDate.Trim,V.Local.fTotal,V.Local.sQuery)
+		F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+		F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+		F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+		F.Intrinsic.String.Build("Request {0} - {1}",V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldValLong,V.DataTable.dtRequest(V.Global.iReq).Line!FieldValLong,V.Local.sReference)
+		F.Intrinsic.String.Build("Area: {0}",V.DataTable.dtRequest(V.Global.iReq).Area!FieldValTrim,V.Local.sDescription)
+		F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, descr, reference, heading) values('{0}','001862','{1}','L','{2}','{3}','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sDescription.PSQLFriendly,V.Local.sReference.Trim,V.Local.sQuery)
+		F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+		F.Intrinsic.Control.For(V.Local.i1,V.DataTable.dtLot.RowCount--,0,-1)
+			F.Intrinsic.Control.If(V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,>,0)
+				'Use 450100 library to issue
+				F.Intrinsic.String.Format(V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,"0.0000",V.Local.sQtyIssue)
+				V.Local.sBin.Set(V.DataTable.dtLot(V.Local.i1).Bin!FieldValTrim)
+				V.Local.sHeat.Set(V.DataTable.dtLot(V.Local.i1).Heat!FieldValTrim)
+				V.Local.sLot.Set(V.DataTable.dtLot(V.Local.i1).Lot!FieldValTrim)
+				V.Local.sSerial.Set(V.DataTable.dtLot(V.Local.i1).Serial!FieldValTrim)
+				
+				F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs00",V.Local.sTranTimeBegin)
+				
+'				F.Data.DataTable.AddRow("450100","Part",V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,"Location",V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,"WOSuffix",V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,"WOSeq",V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim)
+				F.Data.DataTable.AddRow("450100","Part",V.Local.sPart.Trim,"Rev",V.Local.sRev.Trim,"Location",V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,"WOSuffix",V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,"WOSeq",V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim)
+				F.Intrinsic.Control.CallSub(450100Sync)
+'				'Preparing file name to be called by callwrapper
+'				F.Intrinsic.String.Concat("I",V.Caller.CompanyCode,"IF",V.Caller.Terminal,V.Local.sParam)
+'				F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Local.sParam,V.Local.sFileName)
+'				
+'				V.Local.sPart.Set(V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim)
+'				F.Intrinsic.String.Len(V.Local.sPart,V.Local.iLen)
+'				F.Intrinsic.Control.If(V.Local.iLen,>,17)
+'					F.Intrinsic.String.Mid(V.Local.sPart,17,V.Local.sRev)
+'					F.Intrinsic.String.Left(V.Local.sPart,17,V.Local.sPart)
+'				F.Intrinsic.Control.Else
+'					V.Local.sRev.Set("")
+'				F.Intrinsic.Control.EndIf
+'				F.Intrinsic.String.Format(V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,"0.0000",V.Local.sQtyIssue)
+'			
+'				V.Local.sBin.Set(V.DataTable.dtLot(V.Local.i1).Bin!FieldValTrim)
+'				V.Local.sHeat.Set(V.DataTable.dtLot(V.Local.i1).Heat!FieldValTrim)
+'				V.Local.sLot.Set(V.DataTable.dtLot(V.Local.i1).Lot!FieldValTrim)
+'				V.Local.sSerial.Set(V.DataTable.dtLot(V.Local.i1).Serial!FieldValTrim)
+'			
+'				'Preparing the file format
+'				F.Intrinsic.String.Concat(V.Local.sPart.Trim,",",V.Local.sRev.Trim,",",V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,",",V.Local.sQtyIssue.Trim,",",V.Local.sLot.Trim,",",V.Local.sBin.Trim,",",V.Local.sHeat.Trim,V.Local.sFile)
+'				F.Intrinsic.String.Concat(V.Local.sFile,",",V.Local.sSerial.Trim,",",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,",",V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,",",V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.Local.sFile)
+'				F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sFile)
+'				F.Global.General.CallWrapperSync(450100,V.Local.sParam)
+
+				F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs99",V.Local.sTranTimeEnd)
+				
+				'Check if issued transaction is successful
+				F.Intrinsic.String.Format(V.Ambient.Date,"YYMMDD",V.Local.sIssueDate)
+				V.Local.dIssued.Set(V.Ambient.Date)
+				V.Local.sUser.Set(V.Caller.User)
+				F.Intrinsic.Math.Mult(-1,V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,V.Local.fQtyIssued)
+				F.Intrinsic.String.Build("select part, Refer_2 from inventory_hist where date_history = '{0}' and part = '{1}' and location = '{2}' and job = '{3}' and suffix = '{4}' and seq = '{5}' and quantity = {6} and userid = '{7}' and inv_hist_time >= '{8}' and inv_hist_time <= '{9}' and code_transaction = 'J55'",V.Local.sIssueDate.Trim,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.Local.fQtyIssued,V.Local.sUser.Trim,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+				F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+				F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+					V.Local.iStatus.Set(1)
+				F.Intrinsic.Control.Else
+					F.ODBC.conx!rst.Close
+					F.Intrinsic.UI.Sleep(3)
+					F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs99",V.Local.sTranTimeEnd)
+					F.Intrinsic.String.Build("select part, Refer_2 from inventory_hist where date_history = '{0}' and part = '{1}' and location = '{2}' and job = '{3}' and suffix = '{4}' and seq = '{5}' and quantity = {6} and userid = '{7}' and inv_hist_time >= '{8}' and inv_hist_time <= '{9}' and code_transaction = 'J55'",V.Local.sIssueDate.Trim,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.Local.fQtyIssued,V.Local.sUser.Trim,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+					F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+					F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+						V.Local.iStatus.Set(1)
+					F.Intrinsic.Control.Else
+						V.Local.iStatus.Set(0)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+				
+				F.Intrinsic.Control.If(V.Local.iStatus,=,1)
+					F.ODBC.conx!rst.Set!Refer_2(V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldVal)
+					F.ODBC.conx!rst.Update
+					F.ODBC.conx!rst.Close
+					'Check JOB_TRANS_ERR if issue is failed
+					F.Intrinsic.String.Build("select description, msg_id, filename from v_job_trans_err where job = '{0}' and suffix = '{1}' and seq = '{2}' and part = '{3}' and loc = '{4}' and tran_date = '{5}' and err_time >= '{6}' and err_time <= '{7}' and program = 'JB0320'",V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.Local.dIssued.PervasiveDate,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+					F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+					F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+						F.Intrinsic.String.Build("There was an error in material issue with the following description: {1}{0}Message ID: {2}, Filename: {3}{0}For work order: {4}-{5}, sequence: {6}, part: {7}",V.Ambient.NewLine,V.ODBC.conx!rst.FieldVal!description,V.ODBC.conx!rst.FieldVal!msg_id,V.ODBC.conx!rst.FieldVal!filename,V.DataTable.dtRequest(V.Global.iReq).Job!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Sequence!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.Local.sMessage)
+						F.Intrinsic.UI.Msgbox(V.Local.sMessage,"Issue Material Request [ARC 6370]")
+					F.Intrinsic.Control.Else
+						F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sIssueDate)
+						
+						F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+						F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+						F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, qty_2, lot, bin, heat, serial, heading) values('{0}','001862','{1}','L1',{2},'{3}','{4}','{5}','{6}','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,V.Local.sLot.Trim,V.Local.sBin.Trim,V.Local.sHeat.Trim,V.Local.sSerial.Trim,V.Local.sQuery)
+						F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.Else
+					'Transaction is not successful, substract the total issue qty with the lot/bin issue qty
+					F.Intrinsic.String.Build("Failed issue from lot: {0}, bin: {1}, heat: {2}, serial: {3}",V.Local.sLot.Trim,V.Local.sBin.Trim,V.Local.sHeat.Trim,V.Local.sSerial.Trim,V.Local.sUser)
+					F.Intrinsic.UI.Msgbox(V.Local.sUser,"Issue Material Request [ARC 6370]")
+					'F.Intrinsic.Math.Sub(V.Local.fTotal,V.DataTable.dtLot(V.Local.i1).Issue!FieldValFloat,V.Local.fTotal)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rst.Close
+			F.Intrinsic.Control.EndIf
+			'F.Data.DataTable.DeleteRow("dtLot",V.Local.i1)
+		F.Intrinsic.Control.Next(V.Local.i1)
+		F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+		F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+		F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, heading) values('{0}','001862','{1}','L1','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sQuery)
+		F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+		
+		F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+		F.Intrinsic.Math.Add(V.DataTable.dtRequest(V.Global.iReq).QtyIssued!FieldValTrim,V.Local.fTotal,V.Local.fQtyIssued)
+		F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sIssueDate)
+		F.Intrinsic.Control.If(V.DataTable.dtRequest(V.Global.iReq).QtyReq!FieldValTrim,=,V.Local.fQtyIssued)
+			F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, status = 1, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldValLong,V.DataTable.dtRequest(V.Global.iReq).Line!FieldValLong,V.Local.fQtyIssued,V.Local.sIssueDate.Trim,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			
+			F.Intrinsic.String.Build("Part = '{0}' and Loc = '{1}'",V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.Local.sFilter)
+			F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Global.iReq).Onhand!FieldValFloat,V.Local.fTotal,V.Local.fQtyRem)
+			F.Intrinsic.Control.If(V.Local.fQtyRem,<,0)
+				V.Local.fQtyRem.Set(0)
+			F.Intrinsic.Control.EndIf
+			F.Data.DataTable.Select("dtRequest",V.Local.sFilter,V.Local.sRows)
+			F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+			F.Intrinsic.Control.If(V.Local.sRows.UBound,>,0)
+				F.Intrinsic.Control.For(V.Local.i1,0,V.Local.sRows.UBound,1)
+					F.Data.DataTable.SetValue("dtRequest",V.Local.sRows(V.Local.i1),"Onhand",V.Local.fQtyRem)
+				F.Intrinsic.Control.Next(V.Local.i1)
+			F.Intrinsic.Control.EndIf
+			F.Data.DataTable.DeleteRow("dtRequest",V.Global.iReq)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.DataTable.dtRequest(V.Global.iReq).ReqID!FieldValLong,V.DataTable.dtRequest(V.Global.iReq).Line!FieldValLong,V.Local.fQtyIssued,V.Local.sIssueDate.Trim,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			
+			F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Global.iReq).Request!FieldValTrim,V.Local.fTotal,V.Local.fQtyRem)
+			F.Data.DataTable.SetValue("dtRequest",V.Global.iReq,"Request",V.Local.fQtyRem)
+			
+			F.Intrinsic.String.Build("Part = '{0}' and Loc = '{1}'",V.DataTable.dtRequest(V.Global.iReq).Part!FieldValTrim,V.DataTable.dtRequest(V.Global.iReq).Loc!FieldValTrim,V.Local.sFilter)
+			F.Intrinsic.Math.Sub(V.DataTable.dtRequest(V.Global.iReq).Onhand!FieldValFloat,V.Local.fTotal,V.Local.fQtyRem)
+			F.Intrinsic.Control.If(V.Local.fQtyRem,<,0)
+				V.Local.fQtyRem.Set(0)
+			F.Intrinsic.Control.EndIf
+			F.Data.DataTable.Select("dtRequest",V.Local.sFilter,V.Local.sRows)
+			F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+			F.Intrinsic.Control.If(V.Local.sRows.UBound,>,0)
+				F.Intrinsic.Control.For(V.Local.i1,0,V.Local.sRows.UBound,1)
+					F.Data.DataTable.SetValue("dtRequest",V.Local.sRows(V.Local.i1),"Onhand",V.Local.fQtyRem)
+				F.Intrinsic.Control.Next(V.Local.i1)
+			F.Intrinsic.Control.EndIf
+			Gui.F_IssueRequest.GsGCRequest.SetRowAppearance("gvReq",V.Global.iReq,"backcolor","White")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	Gui.F_IssueRequest.frameLotBin.Enabled(False)
+	Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","ReadOnly",False)
+	Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","AllowEdit",True)
+	Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Submit","AllowEdit",False)
+	F.Intrinsic.UI.CloseWaitDialog
+F.Intrinsic.Control.else
+	F.Intrinsic.UI.Msgbox("Please select lot/bin to continue","Issue Material Request [ARC 6370]")
+F.Intrinsic.Control.EndIf
+Program.Sub.LotBin_Issue.End
+
+Program.Sub.LotBin_Cancel.Start
+V.Local.i1.Declare
+V.Local.sTemp.Declare
+
+F.Intrinsic.Control.For(V.Local.i1,V.DataTable.dtLot.RowCount--,0,-1)
+	F.Data.DataTable.DeleteRow("dtLot",V.Local.i1)
+F.Intrinsic.Control.Next(V.Local.i1)
+Gui.F_IssueRequest.frameLotBin.Enabled(False)
+Gui.F_IssueRequest.GsGCRequest.SetRowAppearance("gvReq",V.Global.iReq,"backcolor","White")
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","ReadOnly",False)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Issue","AllowEdit",True)
+Gui.F_IssueRequest.GsGCRequest.SetColumnProperty("gvReq","Submit","AllowEdit",False)
+
+F.Intrinsic.String.Format(0,"#,0.0000",V.Local.sTemp)
+Gui.F_IssueRequest.txtRequest.Text(V.Local.sTemp)
+F.Intrinsic.String.Format(0,"#,0.0000",V.Local.sTemp)
+Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+
+F.Intrinsic.Control.If(V.Global.iIssueSelected,=,1)
+	F.Data.DataTable.SetValue("dtPartTotal",0,"Status",1)
+	F.Intrinsic.Control.CallSub(cmdIssueSelected_Click)
+F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+Program.Sub.LotBin_Cancel.End
+
+Program.Sub.PrintAuditTrail.Start
+'Print audit material audit trail (Report ID 1862)
+V.Local.sBIParam.Declare(String)
+V.Local.sBIParamVal.Declare(String)
+
+F.Intrinsic.String.Split("Terminal*!*Rptid*!*Program*!*HIDECOST","*!*",V.Local.sBIParam)
+F.Intrinsic.String.Concat(V.Caller.Terminal,"*!*001862*!*GAB_6370_ISSUE_MATERIAL_REQUEST.g2u*!*Y",V.Local.sBIParamVal)
+F.Intrinsic.String.Split(V.Local.sBIParamVal,"*!*",V.Local.sBIParamVal)
+F.Global.BI.PrintReport("001862",16,V.Local.sBIParam,V.Local.sBIParamVal,"GSView",False)
+Program.Sub.PrintAuditTrail.End
+
+Program.Sub.ExportGrid.Start
+V.Local.sFileExport.Declare
+V.Local.bExcel.Declare
+V.Local.bFileLocked.Declare
+V.Local.sFilePath.Declare
+V.Local.sMsg.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+
+'Display the Save Dialog
+F.Intrinsic.Control.If(V.Local.bExcel,=,True)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFilePath)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFilePath)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sFilePath,<>,"***CANCEL***")
+'	F.Intrinsic.String.Format(V.Ambient.Date,"YYYYMMDD",V.Local.sMsg)
+	V.Local.sFileExport.Set(V.Local.sFilePath)
+'	F.Intrinsic.String.Build("{0}{1}\Desktop\Master_Dashboard_{2}",V.System.HomeDrive,V.System.HomePath,V.Local.sMsg.Trim,V.Local.sFileExport)
+	F.Intrinsic.Control.If(V.Local.bExcel,=,True)
+		F.Intrinsic.String.Concat(V.Local.sFileExport,".xlsx",V.Local.sFileExport)
+		Gui.F_IssueRequest.GsGCRequest.Export(V.Local.sFileExport,"xlsx")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(V.Local.sFileExport,".csv",V.Local.sFileExport)
+		Gui.F_IssueRequest.GsGCRequest.Export(V.Local.sFileExport,"csv")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Concat("Grid has been exported to ",V.Local.sFileExport,V.Local.sMsg)
+	F.Intrinsic.UI.Msgbox(V.Local.sMsg)
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.EndIf
+Program.Sub.ExportGrid.End
+
+Program.Sub.CheckLockFile.Start
+V.Local.sJob.Declare
+V.Local.sSQL.Declare
+V.Local.sSuffix.Declare
+
+V.Local.sJob.Set(V.DataTable.dtRequest(V.Global.iReq).Job!FieldVal)
+V.Local.sSuffix.Set(V.DataTable.dtRequest(V.Global.iReq).Suffix!FieldVal)
+
+F.Intrinsic.String.Build("select user_id from x_lock_file where company = '{0}' and lock_type = 'WO' and rec_key = '{1}-{2}'",V.Caller.CompanyCode,V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+	V.Global.bLock.Set(True)
+	F.Intrinsic.String.Build("Issue material cannot be processed. WO {0}-{1} is currently being opened by user {2}",V.Local.sJob,V.Local.sSuffix,V.ODBC.conx!rst.FieldVal!user_id,V.Local.sSQL)
+	F.Intrinsic.UI.Msgbox(V.Local.sSQL,"Issue Material Request [ARC 6370]")
+F.Intrinsic.Control.Else
+	V.Global.bLock.Set(False)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+Program.Sub.CheckLockFile.End
+
+Program.Sub.cmdIssueSelected_Click.Start
+V.Local.sQuery.Declare
+V.Local.sMessage.Declare
+V.Local.bDictExists.Declare
+V.Local.iCnt.Declare
+V.Local.fTotalOnhandQty.Declare 
+V.Local.fTotalIssueQty.Declare
+V.Local.sFilter.Declare
+V.Local.sTemp.Declare
+V.Local.i1.Declare
+
+'Validate selected data 
+F.Intrinsic.Control.If(V.DataView.dtRequest!dvIssueSelected.Exists,=,True)
+	F.Data.DataView.Close("dtRequest","dvIssueSelected")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtIssueSelected.Exists,=,True)
+	F.Data.DataTable.Close("dtIssueSelected")
+F.Intrinsic.Control.EndIf
+F.Data.DataView.Create("dtRequest","dvIssueSelected")
+F.Data.DataView.SetFilter("dtRequest","dvIssueSelected","Flag = True")
+F.Data.DataView.ToDataTable("dtRequest","dvIssueSelected","dtIssueSelected",True)
+F.Data.DataView.Close("dtRequest","dvIssueSelected")
+
+F.Intrinsic.Control.CallSub(Serialize)
+
+F.Intrinsic.Control.If(V.DataTable.dtIssueSelected.RowCount,>,0)
+	'Create Dictionary
+	F.Data.Dictionary.Exists("dictTotalOnhand",V.Local.bDictExists)
+	F.Intrinsic.Control.If(V.Local.bDictExists)
+		F.Data.Dictionary.Close("dictTotalOnhand")
+	F.Intrinsic.Control.EndIf
+	V.Local.sQuery.Set("Select CONCAT(rtrim(part),rtrim(location)) as PartLoc, qty_onhand as TotalOnhandQty from v_inventory_mstr order by Part, Location")
+	F.Data.Dictionary.CreateFromSQL("dictTotalOnhand",conx,V.Local.sQuery)
+	F.Data.Dictionary.SetDefaultReturn("dictTotalOnhand",0.00)
+	
+	'Create Dictionary
+	F.Data.Dictionary.Exists("dictIssuedQty",V.Local.bDictExists)
+	F.Intrinsic.Control.If(V.Local.bDictExists)
+		F.Data.Dictionary.Close("dictIssuedQty")
+	F.Intrinsic.Control.EndIf
+	V.Local.sQuery.Set("Select CONCAT(rtrim(req_id),rtrim(req_seq)) as ReqKey, qty_issued as QtyIssued from GAB_6370_MATREQ_LINE")
+	F.Data.Dictionary.CreateFromSQL("dictIssuedQty",conx,V.Local.sQuery)
+	F.Data.Dictionary.SetDefaultReturn("dictIssuedQty",0.00)
+	
+	F.Data.DataView.Create("dtIssueSelected","dvIssueSelected")
+	F.Data.DataView.ToDataTableDistinct("dtIssueSelected","dvIssueSelected","dtIssueSelectedDistinct","PartLoc*!*Part*!*Loc")
+	F.Data.DataTable.AddColumn("dtIssueSelectedDistinct","TotalOnhandQty","Float")
+	F.Data.DataTable.FillFromDictionary("dtIssueSelectedDistinct","dictTotalOnhand","PartLoc","TotalOnhandQty")
+	
+	F.Data.DataTable.SetValue("dtIssueSelected",-1,"QtyIssued",0.00)
+	F.Data.DataTable.FillFromDictionary("dtIssueSelected","dictIssuedQty","ReqKey","QtyIssued")
+	
+	F.Data.Dictionary.Close("dictTotalOnhand")
+	F.Data.Dictionary.Close("dictIssuedQty")
+	
+'	F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtIssueSelectedDistinct.RowCount--, 1)
+	'F.Intrinsic.Debug.ShowCallerInfo
+'		F.Intrinsic.String.Build("Part = '{0}' and Loc = '{1}'",V.DataTable.dtIssueSelectedDistinct(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelectedDistinct(V.Local.iCnt).Loc!FieldValTrim,V.Local.sFilter)
+'		F.Data.DataTable.Compute("dtIssueSelected","SUM(Issue)-SUM(QtyIssued)",V.Local.sFilter,V.Local.fTotalIssueQty)
+'		V.Local.fTotalOnhandQty.Set(V.DataTable.dtIssueSelectedDistinct(V.Local.iCnt).TotalOnhandQty!FieldValFloat)
+'		F.Intrinsic.Control.If(V.Local.fTotalIssueQty,>,V.Local.fTotalOnhandQty)
+'			F.Intrinsic.String.Build("Quantity Onhand is insufficient.{0}Part: {2}{0}Loc: {3}{0}Onhand Qty = {4}{0}Issue Qty = {5}",V.Ambient.NewLine,V.Ambient.Tab,V.DataTable.dtIssueSelectedDistinct(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelectedDistinct(V.Local.iCnt).Loc!FieldValTrim,V.Local.fTotalOnhandQty,V.Local.fTotalIssueQty,V.Local.sMessage)
+'			F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+'			F.Intrinsic.Control.ExitSub
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.Next(V.Local.iCnt)	
+	
+	F.Intrinsic.UI.InvokeWaitDialog("Issuing selected material.......","Issue Material Request [ARC 6370]")
+	
+	F.Intrinsic.Control.If(V.DataTable.dtTemp1.Exists,=,True)
+		F.Data.DataTable.Close("dtTemp1")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtTemp2.Exists,=,True)
+		F.Data.DataTable.Close("dtTemp2")
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.DataView.Create("dtIssueSelected","dvTemp",22,"Issue > 0","Part")
+	F.Data.DataView.ToDataTable("dtIssueSelected","dvTemp","dtTemp1",True)
+	F.Data.DataView.ToDataTable("dtIssueSelected","dvTemp","dtTemp2",True)
+	F.Data.DataView.Close("dtIssueSelected","dvTemp")
+	
+	'F.Data.Linq.Join("Rightjoin","datatable","Employee*!*E","datatable","Department*!*D","E.DeptID=D.Dept_ID","datatable","Manager*!*M","E.MgID=M.MID","E.Emp_ID*!*E.FirstName*!*E.LastName*!* D.DeptName*!*M.MgName","E.Emp_ID <48", "D.DeptName","E.Emp_ID","DTJoinreturn",True)
+
+	F.Intrinsic.Control.If(V.DataTable.DTPartTotal.Exists,=,False)
+		F.Data.Linq.Join("Leftjoin","datatable","dtTemp1*!*A","datatable","dtTemp2*!*B","A.ReqID=B.ReqID and A.Line=B.Line","A.Part*!*A.Loc*!*Sum(A.Issue) as Total", "", "A.Part,A.Loc","A.Part","dTPartTotal",True)
+		F.Data.DataTable.AddColumn("dTPartTotal","Status","Numeric",0)
+		F.Data.DataTable.Close("dtTemp1")
+		F.Data.DataTable.Close("dtTemp2")
+	F.Intrinsic.Control.Else
+		F.Data.DataView.Create("dTPartTotal","dvPartTotal",22,"Status = 0","Part")
+		F.Data.DataView.ToDataTable("dtPartTotal","dvPartTotal","dtPartTotal0",True)
+		F.Data.DataView.Close("dtPartTotal","dvPartTotal")
+		F.Data.DataTable.Close("dtPartTotal")
+		F.Data.DataView.Create("dTPartTotal0","dvPartTotal",22,"Status = 0","Part")
+		F.Data.DataView.ToDataTable("dtPartTotal0","dvPartTotal","dtPartTotal",True)
+		F.Data.DataView.Close("dtPartTotal0","dvPartTotal")
+		F.Data.DataTable.Close("dtPartTotal0")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.DataTable.dtPartTotal.RowCount,>,0)
+	Gui.F_IssueRequest.frameRequest.Locked(True)
+'	F.Intrinsic.Debug.ShowCallerInfo
+		F.Intrinsic.Control.For(V.Local.iCnt, 0, 0, 1)
+			V.Global.bIssue.Set(True)
+			V.Global.iIssueSelected.Set(1)
+			V.Global.sPart.Set(V.DataTable.DTPartTotal(V.Local.iCnt).Part!FieldValTrim)
+			V.Global.sLoc.Set(V.DataTable.DTPartTotal(V.Local.iCnt).Loc!FieldValTrim)
+			F.Intrinsic.Control.If(V.Global.sLoc,=,"0")
+				V.Global.sLoc.Set("")
+			F.Intrinsic.Control.EndIf
+			V.Global.fIssueTotal.Set(V.DataTable.DTPartTotal(V.Local.iCnt).Total!FieldValFloat)
+			Gui.F_IssueRequest.frameLotBin.Enabled(True)
+					
+			F.Intrinsic.String.Build("SELECT FLAG_LOT FROM V_INVENTORY_MSTR WHERE PART = '{0}' and location = '{1}'",V.Global.sPart.Trim, V.Global.sLoc.Trim, V.Local.sQuery)
+			F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+			F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValTrim!FLAG_LOT,=,"Y")			
+				F.Intrinsic.Control.If(V.DataTable.dtLot.Exists,=,True)
+					F.Data.DataTable.Close("dtLot")
+				F.Intrinsic.Control.EndIf
+				
+				F.Intrinsic.String.Format(V.Global.fIssueTotal,"#,0.0000",V.Local.sTemp)
+				Gui.F_IssueRequest.txtRequest.Text(V.Local.sTemp)
+				F.Intrinsic.String.Format(0,"#,0.0000",V.Local.sTemp)
+				Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+				
+				F.Intrinsic.String.Build("SELECT Part, LOT as Lot,BIN as Bin,HEAT as Heat,SERIAL_NUMBER as Serial, date_expiration as ExpDate, QUANTITY as Quantity FROM V_ITEM_MASTER WHERE PART = '{0}' and location = '{1}' AND QUANTITY > 0 ORDER BY DATE_LAST_REC",V.DataTable.DTPartTotal(V.Local.iCnt).Part!FieldValTrim,V.Global.sLoc.Trim,V.Local.sQuery)
+				F.Data.DataTable.CreateFromSQL("dtLot","conx",V.Local.sQuery,True)
+				F.Data.DataTable.AddColumn("dtLot","Issue","Float")
+				F.Data.DataTable.AddColumn("dtLot","Flag","Boolean")
+				F.Data.DataTable.SetValue("dtLot",-1,"Flag",False,"Issue",0)
+				Gui.F_IssueRequest.GsGCLot.AddGridviewFromDatatable("gvLot","dtLot")
+				F.Intrinsic.Control.CallSub(gvlot_properties)
+				Gui.F_IssueRequest.GsGCLot.MainView("gvLot")
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.CallSub(LotBin_Issue0)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conx!rst.Close	
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.DataTable.dtPartTotal.Exists,=,True)
+			F.Data.DataTable.Close("dtPartTotal")
+		F.Intrinsic.Control.EndIf
+	
+		F.Intrinsic.Control.If(V.DataTable.dtIssueSelected.Exists,=,True)
+			F.Data.DataTable.Close("dtIssueSelected")
+		F.Intrinsic.Control.EndIf
+	
+		F.Intrinsic.Control.If(V.DataTable.dtIssueSelectedDistinct.Exists,=,True)
+			F.Data.DataTable.Close("dtIssueSelectedDistinct")
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Format(0,"#,0.0000",V.Local.sTemp)
+		Gui.F_IssueRequest.txtRequest.Text(V.Local.sTemp)
+		F.Intrinsic.String.Format(0,"#,0.0000",V.Local.sTemp)
+		Gui.F_IssueRequest.txtLotBin.Text(V.Local.sTemp)
+		
+		F.Intrinsic.Control.If(V.DataTable.dtLot.Exists,=,True)			
+			F.Intrinsic.Control.For(V.Local.i1,V.DataTable.dtLot.RowCount--,0,-1)
+				F.Data.DataTable.DeleteRow("dtLot",V.Local.i1)
+			F.Intrinsic.Control.Next(V.Local.i1)
+		F.Intrinsic.Control.EndIf	
+		Gui.F_IssueRequest.frameLotBin.Enabled(False)
+		F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+	F.Intrinsic.Control.EndIf	
+	
+'	F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtIssueSelected.RowCount--, 1)
+'		F.Intrinsic.Control.If(V.DataTable.dtIssueSelected(V.Local.iCnt).Issue!FieldValFloat,>,0.00)
+'			'Check for lot/bin
+'			F.Intrinsic.String.Build("SELECT FLAG_LOT FROM V_INVENTORY_MSTR WHERE PART = '{0}' and location = '{1}'",V.DataTable.dtIssueSelected(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelected(V.Local.iCnt).Loc!FieldValTrim,V.Local.sQuery)
+'			F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+'			V.Global.iReq.Set(V.Local.iCnt)
+'			F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValTrim!FLAG_LOT,=,"Y")
+'	
+'				F.Intrinsic.Control.If(V.DataTable.dtLot.Exists,=,True)
+'					F.Data.DataTable.Close("dtLot")
+'				F.Intrinsic.Control.EndIf
+'				F.Intrinsic.String.Build("SELECT LOT as Lot,BIN as Bin,HEAT as Heat,SERIAL_NUMBER as Serial, date_expiration as ExpDate, QUANTITY as Quantity FROM V_ITEM_MASTER WHERE PART = '{0}' and location = '{1}' AND QUANTITY > 0 ORDER BY QUANTITY DESC",V.DataTable.dtIssueSelected(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelected(V.Local.iCnt).Loc!FieldValTrim,V.Local.sQuery)
+'				F.Data.DataTable.CreateFromSQL("dtLot","conx",V.Local.sQuery,True)
+'	
+'				F.Intrinsic.Control.If(V.DataTable.dtLot(0).Quantity!FieldValFloat,>=,V.DataTable.dtIssueSelected(V.Local.iCnt).Issue!FieldValFloat)
+'					F.Intrinsic.Control.CallSub(IssueMaterialAllSelectedLotBin,"fIssue",V.DataTable.dtIssueSelected(V.Local.iCnt).Issue!FieldValFloat,"sBin",V.DataTable.dtLot(0).Bin!FieldValTrim,"sHeat",V.DataTable.dtLot(0).Heat!FieldValTrim,"sLot",V.DataTable.dtLot(0).Lot!FieldValTrim,"sSerial",V.DataTable.dtLot(0).Serial!FieldValTrim)
+'				F.Intrinsic.Control.Else
+'					F.Intrinsic.String.Build("Part: {2} {0}Loc: {3}{1}Quantity in Bin: {4} is not enough",V.Ambient.Tab,V.Ambient.NewLine,V.DataTable.dtIssueSelected(V.Local.iCnt).Part!FieldValTrim,V.DataTable.dtIssueSelected(V.Local.iCnt).Loc!FieldValTrim,V.DataTable.dtLot(0).Bin!FieldValTrim,V.Local.sMessage)
+'					F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+'				F.Intrinsic.Control.EndIf
+
+'			F.Intrinsic.Control.Else
+'				F.Intrinsic.Control.CallSub(IssueMaterialAllSelected,"fIssue",V.DataTable.dtIssueSelected(V.Local.iCnt).Issue!FieldValFloat,"sBin","","sHeat","","sLot","","sSerial","")
+'			F.Intrinsic.Control.EndIf
+'			F.ODBC.conx!rst.Close
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtPartInfo.Exists,=,True)
+		F.Data.DataTable.Close("dtPartInfo")
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.DataTable.CreateFromSQL("dtPartInfo","Conx","select i1.part as Part, i1.location as Loc, i1.description as Description1, i2.description_2 as Description2, i2.description_3 as Description3, i1.um_inventory as UM, i1.qty_onhand as Onhand from v_inventory_mstr i1 left join v_inventory_mst2 i2 on i1.part = i2.part and i1.location = i2.location",True) 
+''	F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+'	
+'	
+'	F.Intrinsic.Control.If(V.DataTable.dtIssueSelected.Exists,=,True)
+''		F.Data.DataTable.Close("dtIssueSelected")
+'	F.Intrinsic.Control.EndIf
+'	
+'	F.Intrinsic.Control.If(V.DataTable.dtIssueSelectedDistinct.Exists,=,True)
+''		F.Data.DataTable.Close("dtIssueSelectedDistinct")
+'	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.UI.CloseWaitDialog
+	
+F.Intrinsic.Control.EndIf
+	
+Program.Sub.cmdIssueSelected_Click.End
+
+Program.Sub.IssueMaterialAllSelected.Start
+V.Local.dIssued.Declare(Date)
+V.Local.fQtyIssued.Declare
+V.Local.fQtyRem.Declare
+V.Local.i1.Declare
+V.Local.iLen.Declare
+V.Local.sBin.Declare
+V.Local.sDate.Declare
+V.Local.sDescription.Declare
+V.Local.sFile.Declare
+V.Local.sFileName.Declare
+V.Local.sFilter.Declare
+V.Local.sHeat.Declare
+V.Local.sIssueDate.Declare
+V.Local.sLot.Declare
+V.Local.sMessage.Declare
+V.Local.sParam.Declare
+V.Local.sPart.Declare
+V.Local.sQtyIssue.Declare
+V.Local.sQuery.Declare
+V.Local.sReference.Declare
+V.Local.sRev.Declare
+V.Local.sRows.Declare
+V.Local.sSeq.Declare
+V.Local.sSerial.Declare
+V.Local.sUser.Declare
+V.Local.sTranTimeBegin.Declare
+V.Local.sTranTimeEnd.Declare
+V.Local.iStatus.Declare
+
+'Check if WO is currently opened by a user at x_lock_file table
+F.Intrinsic.Control.CallSub(checklockfile,"Cnt","dtIssueSelected(V.Global.iReq)")
+
+F.Intrinsic.Control.If(V.Global.bLock,=,False)
+	'Preparing file name to be called by callwrapper
+	F.Intrinsic.String.Concat("I",V.Caller.CompanyCode,"IF",V.Caller.Terminal,V.Local.sParam)
+	F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Local.sParam,V.Local.sFileName)
+	
+	V.Local.sPart.Set(V.Args.sPart)
+	F.Intrinsic.String.Len(V.Local.sPart,V.Local.iLen)
+	
+	F.Intrinsic.Control.If(V.Local.iLen,>,17)
+		F.Intrinsic.String.Mid(V.Local.sPart,18,V.Local.sRev)
+		F.Intrinsic.String.Left(V.Local.sPart,17,V.Local.sPart)
+	F.Intrinsic.Control.Else
+		V.Local.sRev.Set("")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Format(V.Args.fIssue,"0.0000",V.Local.sQtyIssue)
+	
+	'Lot/bin information if the part is flagged as lot/bin
+	V.Local.sBin.Set(V.Args.sBin)
+	V.Local.sHeat.Set(V.Args.sHeat)
+	V.Local.sLot.Set(V.Args.sLot)
+	V.Local.sSerial.Set(V.Args.sSerial)
+	
+	F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs00",V.Local.sTranTimeBegin)
+	
+	'Preparing the file format
+'	F.Data.DataTable.AddRow("450100","Part",V.DataTable.dtIssueSelected(V.Global.iReq).Part!FieldValTrim,"Location",V.DataTable.dtIssueSelected(V.Global.iReq).Loc!FieldValTrim,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.DataTable.dtIssueSelected(V.Global.iReq).Job!FieldValTrim,"WOSuffix",V.DataTable.dtIssueSelected(V.Global.iReq).Suffix!FieldValTrim,"WOSeq",V.DataTable.dtIssueSelected(V.Global.iReq).Sequence!FieldValTrim)
+	F.Data.DataTable.AddRow("450100","Part",V.Local.sPart.Trim, "Rev",V.Local.sRev.Trim, "Location",V.Args.sLoc, "Quantity",V.Local.sQtyIssue, "Lot",V.Local.sLot.Trim, "Bin",V.Local.sBin.Trim, "Heat",V.Local.sHeat.Trim, "Serial",V.Local.sSerial.Trim, "WONumber",V.Args.sWO, "WOSuffix",V.Args.sSuffix, "WOSeq",V.Args.sSeq)
+	F.Intrinsic.Control.CallSub(450100Sync)
+	
+	F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs99",V.Local.sTranTimeEnd)
+	
+	'Check for successful processing of transactions
+	F.Intrinsic.String.Format(V.Ambient.Date,"YYMMDD",V.Local.sIssueDate)
+	V.Local.dIssued.Set(V.Ambient.Date)
+	F.Intrinsic.Math.Mult(-1,V.Args.fIssue,V.Local.fQtyIssued)
+	V.Local.sUser.Set(V.Caller.User)
+	F.Intrinsic.String.Build("select part, Refer_2 from inventory_hist where date_history = '{0}' and part = '{1}' and location = '{2}' and job = '{3}' and suffix = '{4}' and seq = '{5}' and quantity = {6} and userid = '{7}' and inv_hist_time >= '{8}' and inv_hist_time <= '{9}' and code_transaction = 'J55'",V.Local.sIssueDate.Trim, V.Args.sPart, V.Args.sLoc, V.Args.sWO, V.Args.sSuffix, V.Args.sSeq, V.Local.fQtyIssued, V.Local.sUser.Trim, V.Local.sTranTimeBegin, V.Local.sTranTimeEnd, V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+		V.Local.iStatus.Set(1)
+	F.Intrinsic.Control.Else
+		F.ODBC.conx!rst.Close
+		F.Intrinsic.UI.Sleep(3)
+		F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs99",V.Local.sTranTimeEnd)
+		F.Intrinsic.String.Build("select part, Refer_2 from inventory_hist where date_history = '{0}' and part = '{1}' and location = '{2}' and job = '{3}' and suffix = '{4}' and seq = '{5}' and quantity = {6} and userid = '{7}' and inv_hist_time >= '{8}' and inv_hist_time <= '{9}' and code_transaction = 'J55'",V.Local.sIssueDate.Trim, V.Args.sPart, V.Args.sLoc, V.Args.sWO, V.Args.sSuffix, V.Args.sSeq, V.Local.fQtyIssued, V.Local.sUser.Trim, V.Local.sTranTimeBegin, V.Local.sTranTimeEnd, V.Local.sQuery)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			V.Local.iStatus.Set(1)
+		F.Intrinsic.Control.Else
+			V.Local.iStatus.Set(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf	
+	
+	F.Intrinsic.Control.If(V.Local.iStatus,=,1)
+		F.ODBC.conx!rst.Set!Refer_2(V.Args.iReqID)
+		F.ODBC.conx!rst.Update
+		F.ODBC.conx!rst.Close
+		'Check JOB_TRANS_ERR if issue is failed
+		F.Intrinsic.String.Build("select description, msg_id, filename from v_job_trans_err where job = '{0}' and suffix = '{1}' and seq = '{2}' and part = '{3}' and loc = '{4}' and tran_date = '{5}' and err_time >= '{6}' and err_time <= '{7}' and program = 'JB0320'",V.Args.sWO, V.Args.sSuffix, V.Args.sSeq, V.Args.sPart, V.Args.sLoc, V.Local.dIssued.PervasiveDate,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			F.Intrinsic.String.Build("There was an error in material issue with the following description: {1}{0}Message ID: {2}, Filename: {3}{0}For work order: {4}-{5}, sequence: {6}, part: {7}",V.Ambient.NewLine, V.ODBC.conx!rst.FieldVal!description, V.ODBC.conx!rst.FieldVal!msg_id, V.ODBC.conx!rst.FieldVal!filename, V.Args.sWO, V.Args.sSuffix, V.Args.sSeq, V.Args.sPart,V.Local.sMessage)
+			F.Intrinsic.UI.Msgbox(V.Local.sMessage,"Issue Material Request [ARC 6370]")
+		F.Intrinsic.Control.Else
+		
+			F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sIssueDate)
+			
+			'Adding the record to BI_SF_AUDIT for audit trail printout
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.DateString(V.Ambient.Date,V.Local.sDate)
+			F.Intrinsic.String.Left(V.Args.sDesc,30,V.Local.sDescription)
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, trans, job, suffix, category, descr, reference, tran_date, qty_1, heading) values('{0}','001862','{1}','L','02','{2}','{3}','{4}','{5}','{6}','{7}',{8},'Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Args.sWO, V.Args.sSuffix, V.Args.sSeq,V.Local.sDescription.PSQLFriendly,V.Local.sPart.PSQLFriendly,V.Local.sDate.Trim,V.Args.fIssue,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.Build("Request {0} - {1}",V.Args.iReqID,V.Args.iLine,V.Local.sReference)
+			F.Intrinsic.String.Build("Area: {0}",V.Args.sArea,V.Local.sDescription)
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, descr, reference, heading) values('{0}','001862','{1}','L','{2}','{3}','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sDescription.PSQLFriendly,V.Local.sReference.Trim,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, heading) values('{0}','001862','{1}','L1','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			
+			F.Intrinsic.Math.Add(V.Args.fQtyIssued,V.Args.fIssue,V.Local.fQtyIssued)
+			F.Intrinsic.Control.If(V.Args.fQtyReq,<=,V.Local.fQtyIssued)
+				F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, status = 1, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.Args.iReqID, V.Args.iLine, V.Local.fQtyIssued, V.Local.sIssueDate.Trim, V.Local.sQuery)
+				F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.Args.iReqID, V.Args.iLine, V.Local.fQtyIssued, V.Local.sIssueDate.Trim,V.Local.sQuery)
+				F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		'Transaction is not successful
+		F.Intrinsic.String.Build("Failed issue from{0}Request: {2} {1}Line: {3}{0}Part:{4}, Loc:{5}, Job:{6}, Suffix: {7}",V.Ambient.NewLine,V.Ambient.Tab,V.Args.iReqID, V.Args.iLine, V.Args.sPart, V.Args.sLoc, V.Args.sWO, V.Args.sSuffix, V.Local.sMessage)
+		F.Intrinsic.UI.Msgbox(sMessage,"Issue Material Request [ARC 6370]")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("Request: {2} {0}Line: {3}{1}Job:{4} {0}Suffix: {5}{1}is skipped because the Job is locked for editing by another user",V.Ambient.Tab,V.Ambient.NewLine,V.Args.iReqID, V.Args.iLine, V.Args.sWO, V.Args.sSuffix, V.Local.sMessage)
+	F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+F.Intrinsic.Control.EndIf
+
+
+Program.Sub.IssueMaterialAllSelected.End
+
+Program.Sub.IssueMaterialAllSelectedLotBin.Start
+V.Local.dIssued.Declare(Date)
+V.Local.fQtyIssued.Declare
+V.Local.fQtyRem.Declare
+V.Local.i1.Declare
+V.Local.iLen.Declare
+V.Local.sBin.Declare
+V.Local.sDate.Declare
+V.Local.sDescription.Declare
+V.Local.sFile.Declare
+V.Local.sFileName.Declare
+V.Local.sFilter.Declare
+V.Local.sHeat.Declare
+V.Local.sIssueDate.Declare
+V.Local.sLot.Declare
+V.Local.sMessage.Declare
+V.Local.sParam.Declare
+V.Local.sPart.Declare
+V.Local.sQtyIssue.Declare
+V.Local.sQuery.Declare
+V.Local.sReference.Declare
+V.Local.sRev.Declare
+V.Local.sRows.Declare
+V.Local.sSeq.Declare
+V.Local.sSerial.Declare
+V.Local.sUser.Declare
+V.Local.sTranTimeBegin.Declare
+V.Local.sTranTimeEnd.Declare
+V.Local.iStatus.Declare
+V.Local.sWO.Declare
+V.Local.sSuffix.Declare
+V.Local.fQty.Declare
+
+'Check if WO is currently opened by a user at x_lock_file table
+F.Intrinsic.Control.CallSub(checklockfile,"Cnt","dtIssueSelected(V.Global.iReq)")
+
+F.Intrinsic.Control.If(V.Global.bLock,=,False)
+	'Preparing file name to be called by callwrapper
+	F.Intrinsic.String.Concat("I",V.Caller.CompanyCode,"IF",V.Caller.Terminal,V.Local.sParam)
+	F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Local.sParam,V.Local.sFileName)
+	
+'	V.Local.sPart.Set(V.DataTable.dtIssueSelected(V.Global.iReq).Part!FieldValTrim)
+	V.Local.sPart.Set(V.Args.sPart)
+	F.Intrinsic.String.Len(V.Local.sPart,V.Local.iLen)
+	
+	F.Intrinsic.Control.If(V.Local.iLen,>,17)
+		F.Intrinsic.String.Mid(V.Local.sPart,18,V.Local.sRev)
+		F.Intrinsic.String.Left(V.Local.sPart,17,V.Local.sPart)
+	F.Intrinsic.Control.Else
+		V.Local.sRev.Set("")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Format(V.Args.fIssue,"0.0000",V.Local.sQtyIssue)
+	
+	'Lot/bin information if the part is flagged as lot/bin
+	V.Local.sWO.Set(V.Args.sWO)
+	V.Local.sSuffix.Set(V.Args.sSuffix)
+	V.Local.sSeq.Set(V.Args.sSeq)
+	V.Local.sBin.Set(V.Args.sBin)
+	V.Local.sHeat.Set(V.Args.sHeat)
+	V.Local.sLot.Set(V.Args.sLot)
+	V.Local.sSerial.Set(V.Args.sSerial)
+	
+	F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs00",V.Local.sTranTimeBegin)
+	
+	'Preparing the file format
+'	F.Data.DataTable.AddRow("450100","Part",V.DataTable.dtIssueSelected(V.Global.iReq).Part!FieldValTrim,"Location",V.DataTable.dtIssueSelected(V.Global.iReq).Loc!FieldValTrim,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.DataTable.dtIssueSelected(V.Global.iReq).Job!FieldValTrim,"WOSuffix",V.DataTable.dtIssueSelected(V.Global.iReq).Suffix!FieldValTrim,"WOSeq",V.DataTable.dtIssueSelected(V.Global.iReq).Sequence!FieldValTrim)
+'	F.Data.DataTable.AddRow("450100","Part",V.Local.sPart.Trim,"Rev",V.Local.sRev.Trim,"Location",V.DataTable.dtIssueSelected(V.Global.iReq).Loc!FieldValTrim,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.DataTable.dtIssueSelected(V.Global.iReq).Job!FieldValTrim,"WOSuffix",V.DataTable.dtIssueSelected(V.Global.iReq).Suffix!FieldValTrim,"WOSeq",V.DataTable.dtIssueSelected(V.Global.iReq).Sequence!FieldValTrim)
+	F.Data.DataTable.AddRow("450100","Part",V.Local.sPart.Trim,"Rev",V.Local.sRev.Trim,"Location",V.Args.sLoc,"Quantity",V.Local.sQtyIssue,"Lot",V.Local.sLot.Trim,"Bin",V.Local.sBin.Trim,"Heat",V.Local.sHeat.Trim,"Serial",V.Local.sSerial.Trim,"WONumber",V.Local.sWO,"WOSuffix",V.Local.sSuffix,"WOSeq",V.Local.sSeq.Trim)
+	F.Intrinsic.Control.CallSub(450100Sync)
+	
+	F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs99",V.Local.sTranTimeEnd)
+	
+	'Check for successful processing of transactions
+	F.Intrinsic.String.Format(V.Ambient.Date,"YYMMDD",V.Local.sIssueDate)
+	V.Local.dIssued.Set(V.Ambient.Date)
+	F.Intrinsic.Math.Mult(-1,V.Args.fIssue,V.Local.fQtyIssued)
+	V.Local.sUser.Set(V.Caller.User)
+	F.Intrinsic.String.Build("select part, Refer_2 from inventory_hist where date_history = '{0}' and part = '{1}' and location = '{2}' and job = '{3}' and suffix = '{4}' and seq = '{5}' and quantity = {6} and userid = '{7}' and inv_hist_time >= '{8}' and inv_hist_time <= '{9}' and code_transaction = 'J55'",V.Local.sIssueDate.Trim,V.Args.sPart,V.Args.sLoc,V.Local.sWO,V.Local.sSuffix,V.Local.sSeq.Trim,V.Local.fQtyIssued,V.Local.sUser.Trim,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+		V.Local.iStatus.Set(1)
+	F.Intrinsic.Control.Else
+		F.ODBC.conx!rst.Close
+		F.Intrinsic.UI.Sleep(3)
+		F.Intrinsic.String.Format(V.Ambient.Now,"HhNnSs99",V.Local.sTranTimeEnd)
+		F.Intrinsic.String.Build("select part, Refer_2 from inventory_hist where date_history = '{0}' and part = '{1}' and location = '{2}' and job = '{3}' and suffix = '{4}' and seq = '{5}' and quantity = {6} and userid = '{7}' and inv_hist_time >= '{8}' and inv_hist_time <= '{9}' and code_transaction = 'J55'",V.Local.sIssueDate.Trim,V.Args.sPart,V.Args.sLoc,V.Local.sWO,V.Local.sSuffix,V.Local.sSeq.Trim,V.Local.fQtyIssued,V.Local.sUser.Trim,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			V.Local.iStatus.Set(1)
+		F.Intrinsic.Control.Else
+			V.Local.iStatus.Set(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf		
+	
+	F.Intrinsic.Control.If(V.Local.iStatus,=,1)
+		F.ODBC.conx!rst.Set!Refer_2(V.Args.iReqID)
+		F.ODBC.conx!rst.Update	
+		F.ODBC.conx!rst.Close
+		'Check JOB_TRANS_ERR if issue is failed
+		F.Intrinsic.String.Build("select description, msg_id, filename from v_job_trans_err where job = '{0}' and suffix = '{1}' and seq = '{2}' and part = '{3}' and loc = '{4}' and tran_date = '{5}' and err_time >= '{6}' and err_time <= '{7}' and program = 'JB0320'",V.Local.sWO,V.Local.sSuffix,V.Local.sSeq.Trim,V.Args.sPart,V.Args.sLoc,V.Local.dIssued.PervasiveDate,V.Local.sTranTimeBegin,V.Local.sTranTimeEnd,V.Local.sQuery)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sQuery)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			F.Intrinsic.String.Build("There was an error in material issue with the following description: {1}{0}Message ID: {2}, Filename: {3}{0}For work order: {4}-{5}, sequence: {6}, part: {7}",V.Ambient.NewLine,V.ODBC.conx!rst.FieldVal!description,V.ODBC.conx!rst.FieldVal!msg_id,V.ODBC.conx!rst.FieldVal!filename,V.Local.sWO,V.Local.sSuffix,V.Local.sSeq.Trim,V.Args.sPart,V.Local.sMessage)
+			F.Intrinsic.UI.Msgbox(V.Local.sMessage,"Issue Material Request [ARC 6370]")
+		F.Intrinsic.Control.Else
+			'Adding the record to BI_SF_AUDIT for audit trail printout
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.DateString(V.Ambient.Date,V.Local.sDate)
+			V.Local.sPart.Set(V.Args.sPart)
+			F.Intrinsic.String.Left(V.Args.sDesc,30,V.Local.sDescription)
+			
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, trans, job, suffix, category, descr, reference, tran_date, qty_1, heading) values('{0}','001862','{1}','L','02','{2}','{3}','{4}','{5}','{6}','{7}',{8},'Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sWO,V.Local.sSuffix,V.Local.sSeq.Trim,V.Local.sDescription.PSQLFriendly,V.Local.sPart.PSQLFriendly,V.Local.sDate.Trim,V.Args.fIssue,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.Build("Request {0} - {1}",V.Args.iReqID,V.Args.iLine,V.Local.sReference)
+			F.Intrinsic.String.Build("Area: {0}",V.Args.sArea,V.Local.sDescription)
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, descr, reference, heading) values('{0}','001862','{1}','L','{2}','{3}','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Local.sDescription.PSQLFriendly,V.Local.sReference.Trim,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+
+			F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sIssueDate)
+			
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			F.Intrinsic.String.LPad(V.Global.iBISeq,"0",9,V.Local.sSeq)
+			F.Intrinsic.String.Build("insert into BI_SF_AUDIT(trmnl, rptid, sequence, rec_type, qty_2, lot, bin, heat, serial, heading) values('{0}','001862','{1}','L1',{2},'{3}','{4}','{5}','{6}','Audit Trail for Issue of Materials to Work Orders')",V.Caller.Terminal,V.Local.sSeq.Trim,V.Args.fIssue,V.Local.sLot.Trim,V.Local.sBin.Trim,V.Local.sHeat.Trim,V.Local.sSerial.Trim,V.Local.sQuery)
+			F.ODBC.Connection!conx.Execute(V.Local.sQuery)		
+			
+			F.Intrinsic.Math.Add(V.Global.iBISeq,1,V.Global.iBISeq)
+			
+			F.Intrinsic.Math.Add(V.Args.fQtyIssued,V.Args.fIssue,V.Local.fQtyIssued)
+			F.Intrinsic.Control.If(V.Args.fQtyReq,<=,V.Local.fQtyIssued)
+				F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, status = 1, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.Args.iReqID,V.Args.iLine,V.Local.fQtyIssued,V.Local.sIssueDate.Trim,V.Local.sQuery)
+				F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("update GAB_6370_MATREQ_LINE set qty_issued = {2}, last_issued = '{3}' where req_id = {0} and req_seq = {1}",V.Args.iReqID,V.Args.iLine,V.Local.fQtyIssued,V.Local.sIssueDate.Trim,V.Local.sQuery)
+				F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		'Transaction is not successful
+		F.Intrinsic.String.Build("Failed issue from{0}Request: {2} {1}Line: {3}{0}Part:{4}, Loc:{5}, Job:{6}, Suffix: {7}{0}Lot: {8}, Bin: {9}, Heat: {10}, Serial: {11}",V.Ambient.NewLine,V.Ambient.Tab,V.Args.iReqID,V.Args.iLine,V.Args.sPart,V.Args.sLoc,V.Local.sWO,V.Local.sSuffix,V.Local.sLot.Trim,V.Local.sBin.Trim,V.Local.sHeat.Trim,V.Local.sSerial.Trim,V.Local.sMessage)
+		F.Intrinsic.UI.Msgbox(sMessage,"Issue Material Request [ARC 6370]")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("Request: {2} {0}Line: {3}{1}Job:{4} {0}Suffix: {5}{1}is skipped because the Job is locked for editing by another user",V.Ambient.Tab,V.Ambient.NewLine,V.Args.iReqID,V.Args.iLine,V.Local.sWO,V.Local.sSuffix,V.Local.sMessage)
+	F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+F.Intrinsic.Control.EndIf
+
+
+Program.Sub.IssueMaterialAllSelectedLotBin.End
+
+Program.Sub.Serialize.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sSerialize.Declare
+	
+	'gvAging
+	Gui.F_IssueRequest.GsGCRequest.Serialize("gvReq",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVREQ",6370,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sSerialize.Declare
+	
+	'Delete old registry records
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVReq",6370,0,5,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+		F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+		F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 4349 And Seq < 1000;")
+		F.ODBC.Connection!common.Close
+	F.Intrinsic.Control.EndIf
+
+	'gvAging
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVReq",6370,1000,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		Gui.F_IssueRequest.GsGCRequest.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.Comments.Start
+${$0$}$Issue Material Request$}$MHERTANTO$}$20/6/2017 11:12:57 PM$}$True
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This program is to be used by warehouse staff to process issue request made by production staffs. The request is submitted through another interface (GAB_4360_MATERIAL_REQUEST.g2u)
+${$5$}$2.0.0.0$}$2
+${$6$}$dyunus$}$20230419101252847$}$xZ6SHi8g7O0Qsxe6AiO2NH3PnOKQRy0T6HbrhWm5t2gD+TiuQMllRS2TzGk36d+AcESrdh2blSg=
+Program.Sub.Comments.End
