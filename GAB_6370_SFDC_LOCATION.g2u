@@ -1,0 +1,302 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_SFDC..Create
+Gui.F_SFDC..Caption("SFDC Area Setup")
+Gui.F_SFDC..Size(5025,7005)
+Gui.F_SFDC..MinX(0)
+Gui.F_SFDC..MinY(0)
+Gui.F_SFDC..Position(0,0)
+Gui.F_SFDC..FontSize(9)
+Gui.F_SFDC..BackColor(-2147483633)
+Gui.F_SFDC..MousePointer(0)
+Gui.F_SFDC..Event(UnLoad,Unload)
+Gui.F_SFDC.lbl1.Create(Label,"Area Name",True,1935,255,0,75,150,True,0,"Arial",9,0,0)
+Gui.F_SFDC.txtArea.Create(TextBox,"",True,3825,315,0,75,390,True,0,"Arial",9,-2147483643,1)
+Gui.F_SFDC.txtArea.Event(LostFocus,NewArea)
+Gui.F_SFDC.txtArea.MaxLength(60)
+Gui.F_SFDC.GsGCSFDC.Create(GsGridControl)
+Gui.F_SFDC.GsGCSFDC.Size(4650,4830)
+Gui.F_SFDC.GsGCSFDC.Position(75,1515)
+Gui.F_SFDC.GsGCSFDC.Event(RowCellClick,gvSFDC_CellClick)
+Gui.F_SFDC.cmdSave.Create(Button)
+Gui.F_SFDC.cmdSave.Size(1200,495)
+Gui.F_SFDC.cmdSave.Position(75,825)
+Gui.F_SFDC.cmdSave.Caption("Save")
+Gui.F_SFDC.cmdSave.FontSize(9)
+Gui.F_SFDC.cmdSave.Event(Click,SaveButton_Click)
+Gui.F_SFDC.cmdNew.Create(Button)
+Gui.F_SFDC.cmdNew.Size(1200,495)
+Gui.F_SFDC.cmdNew.Position(1395,825)
+Gui.F_SFDC.cmdNew.Caption("New")
+Gui.F_SFDC.cmdNew.FontSize(9)
+Gui.F_SFDC.cmdNew.Event(Click,NewButton_Click)
+Gui.F_SFDC.cmdDelete.Create(Button)
+Gui.F_SFDC.cmdDelete.Size(1200,495)
+Gui.F_SFDC.cmdDelete.Position(2730,825)
+Gui.F_SFDC.cmdDelete.Caption("Delete")
+Gui.F_SFDC.cmdDelete.FontSize(9)
+Gui.F_SFDC.cmdDelete.Event(Click,DeleteButton_Click)
+Gui.F_SFDC.cmdBrowse.Create(Button)
+Gui.F_SFDC.cmdBrowse.Size(690,570)
+Gui.F_SFDC.cmdBrowse.Position(4035,150)
+Gui.F_SFDC.cmdBrowse.Caption("^")
+Gui.F_SFDC.cmdBrowse.FontSize(9)
+Gui.F_SFDC.cmdBrowse.Event(Click,BrowseArea)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.iID.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.bExist.Declare
+V.Local.sIcon.Declare
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)
+Gui.F_SFDC..Icon(V.Local.sIcon)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+F.ODBC.Connection!conC.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+'F.ODBC.Connection!conC.OpenConnection("GLOBAL_COMMON",V.Ambient.PUser,V.Ambient.PPass)
+
+F.ODBC.Connection!conx.TableExists("GAB_6370_SFDC_AREA",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!Conx.Execute("CREATE TABLE GAB_6370_SFDC_AREA (ID IDENTITY NOT NULL, AREA VARCHAR(60), PRIMARY KEY (ID));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6370_SFDC_LOC",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!Conx.Execute("CREATE TABLE GAB_6370_SFDC_LOC (AREA_ID INTEGER, SFDC_SEQ INTEGER, SFDC_NAME VARCHAR(30), PRIMARY KEY (AREA_ID, SFDC_SEQ));")
+F.Intrinsic.Control.EndIf
+V.Global.iID.Set(0)
+Gui.F_SFDC..Show
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+F.ODBC.Connection!conx.Close
+F.ODBC.Connection!conC.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.NewArea.Start
+V.Local.iSeq.Declare
+V.Local.sName.Declare
+V.Local.sSQL.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtSFDC.Exists,=,True)
+	F.Data.DataTable.Close("dtSFDC")
+F.Intrinsic.Control.EndIf
+
+V.Local.sName.Set(V.Screen.F_SFDC!txtArea.Text)
+F.Intrinsic.Control.If(V.Local.sName.Trim,<>,"")
+	F.Intrinsic.String.UCase(V.Local.sName,V.Local.sName)
+	F.Intrinsic.String.Build("select * from GAB_6370_SFDC_AREA where upper(area) = '{0}'",V.Local.sName.Trim,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+		F.Data.DataTable.Create("dtSFDC",True)
+		F.Data.DataTable.AddColumn("dtSFDC","Seq","Long")
+		F.Data.DataTable.AddColumn("dtSFDC","WID","String")
+		F.Data.DataTable.AddColumn("dtSFDC","Delete","String")
+		F.Data.DataTable.AddRow("dtSFDC","Seq",1)
+		F.ODBC.Connection!conx.ExecuteAndReturn("SELECT TOP 1 ID FROM GAB_6370_SFDC_AREA ORDER BY ID DESC",V.Global.iID)
+		F.Intrinsic.Math.Add(V.Global.iID,1,V.Global.iID)
+	F.Intrinsic.Control.Else
+		Gui.F_SFDC.txtArea.Text(V.ODBC.conx!rst.FieldValTrim!area)
+		F.Intrinsic.String.Build("select sfdc_seq as Seq, sfdc_name as WID from GAB_6370_SFDC_LOC where area_id = {0} order by sfdc_seq",V.ODBC.conx!rst.FieldValLong!ID,V.Local.sSQL)
+		F.Data.DataTable.CreateFromSQL("dtSFDC","Conx",V.Local.sSQL,True)
+		F.Data.DataTable.AddColumn("dtSFDC","Delete","String")
+		F.Intrinsic.Math.Add(V.DataTable.dtSFDC(V.DataTable.dtSFDC.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+		F.Data.DataTable.AddRow("dtSFDC","Seq",V.Local.iSeq)
+		V.Global.iID.Set(V.ODBC.conx!rst.FieldValLong!ID)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+	Gui.F_SFDC.GsGCSFDC.AddGridviewFromDatatable("gvSFDC","dtSFDC")
+	Gui.F_SFDC.GsGCSFDC.MainView("gvSFDC")
+	F.Intrinsic.Control.CallSub(gvsfdcproperties)
+F.Intrinsic.Control.EndIf
+Program.Sub.NewArea.End
+
+Program.Sub.BrowseArea.Start
+V.Local.iSeq.Declare
+V.Local.iWidths.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+V.Local.sTitles.Declare
+
+F.Intrinsic.String.Split("ID*!*Area Name","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("800*!*3000","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.Browser("Select an SFDC Area","conx","select id, area from GAB_6370_SFDC_AREA order by id",V.Local.sTitles,V.Local.iWidths,10000,10000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_SFDC.txtArea.Text(V.Local.sRet(1).Trim)
+	F.Intrinsic.Control.If(V.DataTable.dtSFDC.Exists,=,True)
+		F.Data.DataTable.Close("dtSFDC")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("select sfdc_seq as Seq, sfdc_name as WID from GAB_6370_SFDC_LOC where area_id = {0} order by sfdc_seq",V.Local.sRet(0),V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtSFDC","Conx",V.Local.sSQL,True)
+	F.Data.DataTable.AddColumn("dtSFDC","Delete","String")
+	F.Intrinsic.Control.If(V.DataTable.dtSFDC.RowCount,=,0)
+		V.Local.iSeq.Set(1)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.DataTable.dtSFDC(V.DataTable.dtSFDC.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.AddRow("dtSFDC","Seq",V.Local.iSeq)
+	V.Global.iID.Set(V.Local.sRet(0))
+	Gui.F_SFDC.GsGCSFDC.AddGridviewFromDatatable("gvSFDC","dtSFDC")
+	Gui.F_SFDC.GsGCSFDC.MainView("gvSFDC")
+	F.Intrinsic.Control.CallSub(gvsfdcproperties)
+F.Intrinsic.Control.EndIf
+Program.Sub.BrowseArea.End
+
+Program.Sub.gvSFDCProperties.Start
+V.Local.i1.Declare
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtSFDC.RowCount--,2)
+	Gui.F_SFDC.GsGCSFDC.SetRowAppearance("gvSFDC",V.Local.i1,"backcolor","aliceblue")
+F.Intrinsic.Control.Next(V.Local.i1)
+Gui.F_SFDC.GsGCSFDC.SetColumnProperty("gvSFDC","Seq","Visible",False)
+Gui.F_SFDC.GsGCSFDC.SetColumnProperty("gvSFDC","WID","HeaderHAlignment","Center")
+Gui.F_SFDC.GsGCSFDC.SetColumnProperty("gvSFDC","Delete","CellHAlignment","Center")
+Gui.F_SFDC.GsGCSFDC.SetColumnProperty("gvSFDC","WID","Caption","Computer Name")
+Gui.F_SFDC.GsGCSFDC.SetColumnProperty("gvSFDC","Delete","ShowCaption",False)
+Gui.F_SFDC.GsGCSFDC.SetColumnProperty("gvSFDC","WID","AllowEdit",False)
+Gui.F_SFDC.GsGCSFDC.SetColumnProperty("gvSFDC","Delete","AllowEdit",False)
+Gui.F_SFDC.GsGCSFDC.ColumnEdit("gvSFDC","Delete","EditorButton","Delete")
+Program.Sub.gvSFDCProperties.End
+
+Program.Sub.gvSFDC_CellClick.Start
+V.Local.iSeq.Declare
+V.Local.iWidths.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+V.Local.sRow.Declare
+V.Local.sSQL.Declare
+V.Local.sTitles.Declare
+F.Intrinsic.Control.If(V.Args.Column,=,"WID")
+	F.Intrinsic.String.Split("Computer Name*!*Terminal No.","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("2000*!*1000","*!*",V.Local.iWidths)
+	F.Intrinsic.UI.Browser("Select an SFDC Workstation","conC","select distinct(wid), terminal from gui_group_membership order by wid",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.String.Build("WID = '{0}'",V.Local.sRet(0).Trim,V.Local.sFilter)
+		F.Data.DataTable.Select("dtSFDC",V.Local.sFilter,V.Local.sRow)
+		F.Intrinsic.Control.If(V.Local.sRow,=,"***NORETURN***")
+			F.Data.DataTable.SetValue("dtSFDC",V.Args.RowIndex,"WID",V.Local.sRet(0).Trim)
+			F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtSFDC.RowCount--)
+				F.Intrinsic.Math.Add(V.DataTable.dtSFDC(V.DataTable.dtSFDC.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+				F.Data.DataTable.AddRow("dtSFDC","Seq",V.Local.iSeq)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("select * from GAB_6370_SFDC_LOC where area_id = {0} and sfdc_seq = {1}",V.Global.iID,V.DataTable.dtSFDC(V.Args.RowIndex).Seq!FieldValLong,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+		F.ODBC.conx!rst.Delete
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+	F.Intrinsic.Control.If(V.DataTable.dtSFDC.RowCount,=,1)
+		F.Data.DataTable.SetValue("dtSFDC",V.Args.RowIndex,"WID","")
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.DeleteRow("dtSFDC",V.Args.RowIndex)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.gvSFDC_CellClick.End
+
+Program.Sub.NewButton_Click.Start
+V.Local.i1.Declare
+Gui.F_SFDC.txtArea.Text("")
+V.Global.iID.Set(0)
+
+F.Intrinsic.Control.If(V.DataTable.dtSFDC.Exists,=,True)
+	F.Intrinsic.Control.If(V.DataTable.dtSFDC.RowCount,=,1)
+		F.Intrinsic.Control.If(V.DataTable.dtSFDC(0).WID!FieldValTrim,<>,"")
+			F.Data.DataTable.SetValue("dtSFDC",0,"WID","")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.For(V.Local.i1,V.DataTable.dtSFDC.RowCount--,1,-1)
+			F.Data.DataTable.DeleteRow("dtSFDC",V.Local.i1)
+		F.Intrinsic.Control.Next(V.Local.i1)
+		F.Data.DataTable.SetValue("dtSFDC",0,"WID","")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.NewButton_Click.End
+
+Program.Sub.SaveButton_Click.Start
+V.Local.i1.Declare
+V.Local.sArea.Declare
+V.Local.sSQL.Declare
+
+V.Local.sArea.Set(V.Screen.F_SFDC!txtArea.Text)
+
+F.Intrinsic.Control.If(V.Local.sArea.Trim,<>,"")
+	F.Intrinsic.Control.If(V.Global.iID,=,0)
+		F.ODBC.Connection!conx.ExecuteAndReturn("SELECT TOP 1 ID FROM GAB_6370_SFDC_AREA ORDER BY ID DESC",V.Global.iID)
+		F.Intrinsic.Math.Add(V.Global.iID,1,V.Global.iID)
+	F.Intrinsic.Control.EndIf
+	V.Local.sArea.Set(V.Screen.F_SFDC!txtArea.Text)
+	F.Intrinsic.String.Build("select * from GAB_6370_SFDC_AREA where id = {0}",V.Global.iID,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+		F.ODBC.conx!rst.AddNew
+		F.ODBC.conx!rst.Set!ID(V.Global.iID)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Set!AREA(V.Local.sArea.Trim)
+	F.ODBC.conx!rst.Update
+	F.ODBC.conx!rst.Close
+	
+	F.Intrinsic.Control.If(V.DataTable.dtSFDC.RowCount,>,1)
+		F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtSFDC.RowCount--,1)
+			F.Intrinsic.Control.If(V.DataTable.dtSFDC(V.Local.i1).WID!FieldValTrim,<>,"")
+				F.Intrinsic.String.Build("select * from GAB_6370_SFDC_LOC where area_id = {0} and sfdc_seq = {1}",V.Global.iID,V.DataTable.dtSFDC(V.Local.i1).Seq!FieldValLong,V.Local.sSQL)
+				F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+					F.ODBC.conx!rst.AddNew
+					F.ODBC.conx!rst.Set!AREA_ID(V.Global.iID)
+					F.ODBC.conx!rst.Set!SFDC_SEQ(V.DataTable.dtSFDC(V.Local.i1).Seq!FieldValLong)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rst.Set!SFDC_NAME(V.DataTable.dtSFDC(V.Local.i1).WID!FieldValTrim)
+				F.ODBC.conx!rst.Update
+				F.ODBC.conx!rst.Close
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.i1)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.CallSub(newbutton_click)
+F.Intrinsic.Control.EndIf
+Program.Sub.SaveButton_Click.End
+
+Program.Sub.DeleteButton_Click.Start
+V.Local.i1.Declare
+V.Local.sArea.Declare
+V.Local.sSQL.Declare
+F.Intrinsic.Control.If(V.Global.iID,>,0)
+	F.Intrinsic.String.Build("select * from GAB_6370_SFDC_AREA where id = {0}",V.Global.iID,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+		F.Intrinsic.Control.If(V.DataTable.dtSFDC.RowCount,>,1)
+			F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtSFDC.RowCount--,1)
+				F.Intrinsic.Control.If(V.DataTable.dtSFDC(V.Local.i1).WID!FieldValTrim,<>,"")
+					F.Intrinsic.String.Build("select * from GAB_6370_SFDC_LOC where area_id = {0} and sfdc_seq = {1}",V.Global.iID,V.DataTable.dtSFDC(V.Local.i1).Seq!FieldValLong,V.Local.sSQL)
+					F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstD",V.Local.sSQL)
+					F.Intrinsic.Control.If(V.ODBC.conx!rstD.EOF,=,False)
+						F.Intrinsic.String.Build("delete from GAB_6370_SFDC_LOC where area_id = {0} and sfdc_seq = {1}",V.Global.iID,V.DataTable.dtSFDC(V.Local.i1).Seq!FieldValLong,V.Local.sSQL)
+						F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+					F.Intrinsic.Control.EndIf
+					F.ODBC.conx!rstD.Close
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.Local.i1)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Build("delete from GAB_6370_SFDC_AREA where id = {0}",V.Global.iID,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+	F.Intrinsic.Control.CallSub(newbutton_click)
+F.Intrinsic.Control.EndIf
+Program.Sub.DeleteButton_Click.End
+
+Program.Sub.Comments.Start
+${$0$}$SFDC Location Setup for ARC 4360$}$MHERTANTO$}$20/6/2017 11:23:37 PM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$The location setup for ARC 4360 enables the link between defined locations in the shop floor and the GUIs in a defined location. The objective is for future development where material request could be made from GUI.
+${$5$}$2.0.0.0$}$2
+${$6$}$tdjohan$}$20210607120450224$}$8rAQhOSvlohpQhMDm1j544LwmwXnRbkhJvR/TvoE0B6/of5zZ0KX32GxU6DAxtBXB8LnCAs2OGI=
+Program.Sub.Comments.End
